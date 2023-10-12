@@ -1,4 +1,4 @@
 # Student-Information-management-system
-TechStack used Java(EE),Jsp,Html,Css,Mysql database.
+TechStack used Java(EE),JSP,HTML,CSS,JAVASCRIPT,BOOSTRAP,MYSQL database.
 <br>
-It is developed to manage the lage scale sthdent information data
+It is developed to manage the lage scale Student information data.
