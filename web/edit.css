@@ -1,0 +1,86 @@
+* {
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     background: url('./pexels-craig-adderley-1563356.jpg');
+     background-size: cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+}
+
+form {
+     display: grid;
+     row-gap: 20px;
+     grid-template-columns: 40% 65% ;
+}
+
+.tag {
+     padding: 8px;
+     color: white;
+}
+
+.data {
+     padding: 8px;
+     border: none;
+     border-radius: 20px;
+     background-color: rgba(127, 255, 212, 0.607);
+}
+
+.button{
+     display: flex;
+     justify-content: center;
+     grid-column: 1/span 2;
+}
+
+.save{
+     padding: 10px;
+     background-color: rgb(131, 243, 131);
+}
+
+
+.contents {
+     padding: 50px 100px;
+     background-color: rgba(0, 0, 0, 0.539);
+}
+
+.contents:hover {
+     padding: 45px 95px;
+     border: 2px solid yellow;
+     border-radius: 20px;
+     background-color: rgba(0, 0, 0, 0.795);
+     animation: border 1s forwards;
+
+     .data {
+          color: white;
+          background-color: rgba(128, 255, 0, 0.507);
+          border: 3px double cyan;
+     }
+
+     .data:focus-within {
+          background-color: rgba(137, 43, 226, 0.42);
+          color: yellow;
+     }
+
+     .save:hover{
+          color:whitesmoke;
+          background:linear-gradient(to right,green, blue);
+          border: 2px dashed yellow;
+     }
+
+     .save:focus{
+          color:honeydew;
+          background-color: rgb(18, 91, 18);
+          border: 2px solid white;
+     }
+}
+
+@keyframes border {
+     100%{
+          border-radius: 50px;
+     }
+     
+}

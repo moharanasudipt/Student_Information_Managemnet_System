@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8601a8c761.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="admin_main.css">
+        <link rel="stylesheet" href="nav.css">
+        <title>Add Student</title>
+    </head>
+    <body>
+        <nav class="navbar fixed-top">
+            <div class="logo">
+                <img src="./software-engineer.png" alt="admin" id="pic">&emsp;<b>Admin Dashboard</b></div>
+            <div class="options">
+                <ul>
+                    <li><a href="Admin.html"><input type="button" value="Home" class="link"></a></li>
+                    <li><a href="addStudent.html"><input type="button" value="Add Student" class="link"></a></li>
+                    <li><a href="addFees.html"><input type="button" value="Add Fees" class="link"></a></li>
+                    <li><a href="addResult.html"><input type="button" value="Add Result" class="link"></a></li>
+                    <li id="name">Sudipt</li>
+                    <li><img src="./switch.png" alt="logout"></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="Std_form_main_admin">
+            <form action="addSudentServlet" class="Std_form_main_adminn" method="post" enctype="multipart/form-data">
+                <h2>STUDENT REPOSITRY</h2>
+                <input type="text" name="name" id="Name" placeholder="Full Name">
+                <input type="text" name="address" id="address" placeholder="Address">
+                <input type="text" name="age" id="age" placeholder="Age">
+                <input type="text" name="dob" id="DOB" placeholder="Date Of Birth">
+                <input type="text" name="contact" id="Phone" placeholder="Phone No.">
+                <input type="text" name="gender" id="gender" placeholder="Gender">
+                <input type="text" name="gname" id="gname" placeholder="Guardian Name">
+                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="branch" id="Branch" placeholder="Branch">
+                <input type="file" name="files">
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </body>
+</html>

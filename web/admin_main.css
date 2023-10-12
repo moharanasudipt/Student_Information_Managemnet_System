@@ -1,0 +1,313 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+
+
+/* Main Section */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  /* background-color: #000; */
+}
+.main-top{
+  display: flex;
+  width: 100%;
+}
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main-skills{
+  display: flex;
+  margin-top: 20px;
+}
+.main-skills .card{
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.main-skills .card h3{
+  margin: 10px;
+  text-transform: capitalize;
+}
+.main-skills .card p{
+  font-size: 12px;
+}
+.main-skills .card button{
+  background: orangered;
+  color: #f1f1f1;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+ .main-skills .card button:hover{
+  background: rgba(223, 70, 15, 0.856);
+} 
+.main-skills .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+
+/* Courses */
+.main-course{
+  margin-top:20px ;
+  /* text-transform: capitalize; */
+}
+.course-box{
+  width: 100%;
+  height: auto;
+  padding: 10px 10px 30px 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul{
+  list-style: none;
+  display: flex;
+}
+.course-box ul li{
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+}
+.course-box ul .active{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course{
+  display: flex;
+}
+.box{
+  width: 33%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: rgb(235, 233, 233);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.box p{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.box button{
+  background: #000;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.box button:hover{
+  background: rgba(0, 0, 0, 0.842);
+}
+.box i{
+  font-size: 7rem;
+  float: right;
+  margin: -20px 20px 20px 0;
+}
+.html{
+  color: rgb(25, 94, 54);
+}
+.css{
+  color: rgb(104, 179, 35);
+}
+.js{
+  color: rgb(28, 98, 179);
+}
+  
+
+
+/* --- */
+.st_info{
+  /* background-color: yellowgreen; */
+  height: 93vh;
+  width: 82vw;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.details_st input{
+  height: 5vh;
+  width: 20vw;
+  padding: 5px;
+}
+
+/* Card Hover  */
+.card {
+  width: 300px;
+  padding: 20px;
+  background-color: #f48c06;  
+  border: 1px solid #0b43d196;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(3, 111, 173, 0.1);
+  transition: transform 0.2s ease-in-out; /* Add a transition for a smooth effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Increase the size of the card on hover */
+  box-shadow: 0px 5px 10px rgba(3, 94, 167, 0.2); /* Add a shadow on hover */
+}
+
+/* Card buttons */
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.btn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+
+/*  table */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table {
+    display: inline;
+    align-self: center;
+    padding: 10px;
+}
+
+#tr {
+    background-color:aliceblue;
+    color: blue;
+    padding: 5px;
+    border: 2px solid rgb(199, 199, 235);
+}
+
+#trhead:hover{
+    background-color: white;
+    box-shadow: 0 0 10px 5px purple;
+}
+
+tr{
+    background-color: white;
+}
+
+td{
+    padding: 5px 10px;
+}
+
+tr:hover{
+    box-shadow: 0 0 3px 1px blue;
+}
+
+.rowdelete{
+    padding: 2px 5px;
+    color: wheat;
+    background-color: red;
+}
+
+.rowdelete:hover{
+    border: 2px solid white;
+    box-shadow: 0 0 10px 5px red;
+}
+
+.action{
+    display: flex;
+}
+
+.rowedit{
+    margin-left: 5px;
+    padding: 2px 5px;
+    color: wheat;
+    background-color: green; 
+}
+
+.rowedit:hover{
+    border: 2px solid white;
+    box-shadow: 0 0 10px 5px green;
+}
+
+#pic{
+    height: 20px;
+    border-radius: 50%;
+}
