@@ -13,5 +13,5 @@ public interface Dao {
     public boolean addResult(String email,String branch,Double CGPA);
     //for departments
     public List<Student> getAllDepartment(String branch);
-    
+    public List<Student> getAllStudent(String email);
 }

@@ -250,4 +250,10 @@ public class DaoImpl implements Dao {
         }
         return list;
     }
+    @Override
+    public List<Student> getAllStudent(String email){
+       Connection con = null;
+        List<Student> list = new ArrayList<Student>();
+        return list;
+    }
 }
