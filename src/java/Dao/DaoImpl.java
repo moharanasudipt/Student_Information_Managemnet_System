@@ -1,4 +1,5 @@
 package Dao;
+
 import java.util.*;
 import Model.*;
 import Model.Student;
@@ -33,7 +34,7 @@ public class DaoImpl implements Dao {
         return connection;
     }
 
-    //Close Connection
+    // Close Connection
     private void closeConnection(Connection connection) {
 
         try {
@@ -79,7 +80,7 @@ public class DaoImpl implements Dao {
         return role;
     }
 
-    //for check the student role
+    // for check the student role
     @Override
     public String checkS(String email, String password) {
         Connection con = null;
@@ -112,9 +113,10 @@ public class DaoImpl implements Dao {
         return role;
     }
 
-    //for registering student
+    // for registering student
     @Override
-    public boolean addStudent(String name, String address, int age, String dob, int contact, String gender, String gname, String mail, String branch, String password, String photo) {
+    public boolean addStudent(String name, String address, int age, String dob, int contact, String gender,
+            String gname, String mail, String branch, String password, String photo) {
         boolean flag = false;
         try {
 
@@ -155,7 +157,7 @@ public class DaoImpl implements Dao {
 
     }
 
-    //for auto-generate password
+    // for auto-generate password
     @Override
     public String generatePassword(String ename, String email) {
         String inputForPassword = ename + email;
@@ -250,10 +252,36 @@ public class DaoImpl implements Dao {
         }
         return list;
     }
+
     @Override
-    public List<Student> getAllStudent(String email){
-       Connection con = null;
+    public List<Student> getAllStudent(String email) {
+        Connection con = null;
         List<Student> list = new ArrayList<Student>();
+
+        try {
+            con = openConnection();
+            String qs = "select name,email,branch from Student where email=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, mail);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+
+                s.setName(rs.getString(1));
+                s.setEmail(rs.getString(2));
+                s.setBranch(rs.getString(3));
+                list.add(s);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
         return list;
+    }
+
+    @Override
+    public String AddAdmin(String name, String email, String password) {
+        return "susa";
     }
 }
