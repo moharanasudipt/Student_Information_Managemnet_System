@@ -20,6 +20,7 @@ public class LoginServlet extends HttpServlet {
         String admin = "Admin";
         String student = "Student";
         String role = null;
+        
 
         ServletConfig sc = getServletConfig();
         String HR_id = sc.getInitParameter("HR_ID");
@@ -45,9 +46,9 @@ public class LoginServlet extends HttpServlet {
             System.out.println("if hr");
             RequestDispatcher rd = request.getRequestDispatcher("HR.html");
             rd.forward(request, response);
-        } else if (admin.equalsIgnoreCase(role)) {
+        } else if (admin.equalsIgnoreCase(role)) {          
             System.out.println("else if Admin");
-            RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
+            RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
             rd.forward(request, response);
         } else if (student.equalsIgnoreCase(role)) {
             System.out.println("else if Student");

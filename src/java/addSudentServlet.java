@@ -24,7 +24,7 @@ public class addSudentServlet extends HttpServlet {
             String branch = request.getParameter("branch");
 
             Integer age = Integer.valueOf(request.getParameter("age"));
-            Integer contact = Integer.valueOf(request.getParameter("contact"));
+            Long contact = Long.valueOf(request.getParameter("contact"));
 
             System.out.println(name);
             System.out.println(address);

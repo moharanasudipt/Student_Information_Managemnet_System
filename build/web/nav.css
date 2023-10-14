@@ -1,0 +1,63 @@
+* {
+     margin: 0;
+     padding: 0;
+}
+
+nav {
+     background: linear-gradient(to left, rgb(78, 113, 154), rgb(179, 154, 113));
+     padding:0 15px;
+     height: 10vh;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+#pic{
+     height: 45px;
+}
+
+ul {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+
+li {
+     list-style: none;
+     margin: 0 20px;
+}
+
+.logo{
+     display: flex;
+     font-size: 30px;
+     color: indigo;
+}
+
+.link{
+     background: none;
+     border: none;
+     font-size: 18px;
+     padding: 10px;
+     font-family: 'Black Ops One', cursive;
+     color:cornsilk;
+}
+
+.link:hover{
+     border: 2px solid maroon;
+     box-shadow: 0 0 10px 5px cyan;
+     background-color: rgb(177, 247, 255);
+     color: maroon;
+     border-radius: 10px;
+}
+
+.link:focus{
+     background-color: rgb(146, 155, 255);
+     color:cornsilk;
+     box-shadow: 0 0 10px 5px violet;
+}
+
+#name{
+     font-family: 'Young Serif', serif;
+     font-size: 25px;
+     color:yellow;
+}

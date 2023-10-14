@@ -1,4 +1,5 @@
 package Dao;
+
 import java.util.*;
 import Model.*;
 import Model.Student;
@@ -89,7 +90,7 @@ public class DaoImpl implements Dao {
             System.out.println("CheckConnection" + con);
             if (con != null) {
                 System.out.println("check method Student");
-                String qs = "select Role from student WHERE EMAIL=? AND PASSWORD=?";
+                String qs = "select role from student WHERE EMAIL=? AND PASSWORD=?";
                 PreparedStatement ps = con.prepareStatement(qs);
                 ps.setString(1, email);
                 ps.setString(2, password);
@@ -114,7 +115,7 @@ public class DaoImpl implements Dao {
 
     //for registering student
     @Override
-    public boolean addStudent(String name, String address, int age, String dob, int contact, String gender, String gname, String mail, String branch, String password, String photo) {
+    public boolean addStudent(String name, String address, int age, String dob, Long contact, String gender, String gname, String mail, String branch, String password, String photo) {
         boolean flag = false;
         try {
 
@@ -129,7 +130,7 @@ public class DaoImpl implements Dao {
                 ps.setString(2, address);
                 ps.setInt(3, age);
                 ps.setString(4, dob);
-                ps.setInt(5, contact);
+                ps.setLong(5, contact);
                 ps.setString(6, gender);
                 ps.setString(7, gname);
                 ps.setString(8, mail);
@@ -194,7 +195,7 @@ public class DaoImpl implements Dao {
             System.out.println("addResult:" + con);
             if (con != null) {
                 System.out.println("Result added");
-                String qs = "update student set CGPA=? where email = ? and Branch = ?";
+                String qs = "update student set cgpa=? where email = ? and branch = ?";
                 PreparedStatement ps = con.prepareStatement(qs);
 
                 ps.setDouble(1, CGPA);
@@ -237,8 +238,8 @@ public class DaoImpl implements Dao {
                     e.setAge(rs.getInt(4));
                     e.setGuardianName(rs.getString(5));
                     e.setEmail(rs.getString(6));
-                    e.setCGPA(rs.getDouble(7));
-                    e.setContact(rs.getInt(8));
+                    e.setCgpa(rs.getDouble(7));
+                    e.setContact(rs.getLong(8));
 
                     list.add(e);
                 }
@@ -250,10 +251,65 @@ public class DaoImpl implements Dao {
         }
         return list;
     }
+
     @Override
-    public List<Student> getAllStudent(String email){
-       Connection con = null;
+    public List<Student> getStudent(String email) {
+        Connection con = null;
         List<Student> list = new ArrayList<Student>();
+        try {
+            con = openConnection();
+            String qs = "select id,name,address,age,dob,contact,GuardianName,email,photo,branch,fees from Student where email=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt(1));
+                s.setName(rs.getString(2));
+                s.setAddress(rs.getString(3));
+                s.setAge(rs.getInt(4));
+                s.setDob(rs.getString(5));
+                s.setContact(rs.getLong(6));
+                s.setGuardianName(rs.getString(7));
+                s.setEmail(rs.getString(8));
+                s.setPhoto(rs.getString(9));
+                s.setBranch(rs.getString(10));
+                s.setFees(rs.getInt(11));
+                list.add(s);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
         return list;
+    }
+
+    //for update fees
+    @Override
+    public int updateFees(int CurrentFee,int AmountFee ,String email) {
+        Connection con = null;
+        int Ufee= 0;
+        try {
+            con = openConnection();
+            String Proc = "{call Fees(?,?,?)}";
+            CallableStatement cs = con.prepareCall(Proc);
+            cs.registerOutParameter(3, Types.NUMERIC);
+            cs.setInt(1, CurrentFee);
+            cs.setInt(2, AmountFee);
+            cs.execute();
+            Ufee=cs.getInt(3);
+            System.out.println("Updated fee"+Ufee);
+            String ps= "update student set fees=? where email=?";
+            
+            PreparedStatement pst= con.prepareStatement(ps);
+            pst.setInt(1, Ufee);
+            pst.setString(2, email);
+            int result=pst.executeUpdate();
+            System.out.println("Updated Result"+result);
+            
+        } catch (Exception e) {
+        }
+        return Ufee;
     }
 }
