@@ -252,6 +252,34 @@ public class DaoImpl implements Dao {
         return list;
     }
 
+    //for update fees
+    @Override
+    public int updateFees(int CurrentFee,int AmountFee ,String email) {
+        Connection con = null;
+        int Ufee= 0;
+        try {
+            con = openConnection();
+            String Proc = "{call Fees(?,?,?)}";
+            CallableStatement cs = con.prepareCall(Proc);
+            cs.registerOutParameter(3, Types.NUMERIC);
+            cs.setInt(1, CurrentFee);
+            cs.setInt(2, AmountFee);
+            cs.execute();
+            Ufee=cs.getInt(3);
+            System.out.println("Updated fee"+Ufee);
+            String ps= "update student set fees=? where email=?";
+            
+            PreparedStatement pst= con.prepareStatement(ps);
+            pst.setInt(1, Ufee);
+            pst.setString(2, email);
+            int result=pst.executeUpdate();
+            System.out.println("Updated Result"+result);
+            
+        } catch (Exception e) {
+        }
+        return Ufee;
+    }
+
 
     @Override
     public List<Student> getAllDepartment(String branch) {
