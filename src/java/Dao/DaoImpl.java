@@ -218,6 +218,41 @@ public class DaoImpl implements Dao {
         return flag;
     }
 
+   
+    @Override
+   public List<Student> getStudent(String email) {
+        Connection con = null;
+        List<Student> list = new ArrayList<Student>();
+        try {
+            con = openConnection();
+            String qs = "select id,name,address,age,dob,contact,GuardianName,email,photo,branch,fees from Student where email=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt(1));
+                s.setName(rs.getString(2));
+                s.setAddress(rs.getString(3));
+                s.setAge(rs.getInt(4));
+                s.setDob(rs.getString(5));
+                s.setContact(rs.getLong(6));
+                s.setGuardianName(rs.getString(7));
+                s.setEmail(rs.getString(8));
+                s.setPhoto(rs.getString(9));
+                s.setBranch(rs.getString(10));
+                s.setFees(rs.getInt(11));
+                list.add(s);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return list;
+    }
+
+
     @Override
     public List<Student> getAllDepartment(String branch) {
         Connection con = null;
@@ -239,8 +274,8 @@ public class DaoImpl implements Dao {
                     e.setAge(rs.getInt(4));
                     e.setGuardianName(rs.getString(5));
                     e.setEmail(rs.getString(6));
-                    e.setCGPA(rs.getDouble(7));
-                    e.setContact(rs.getInt(8));
+                    e.setCgpa(rs.getDouble(7));
+                    e.setContact(rs.getLong(8));
 
                     list.add(e);
                 }
@@ -253,35 +288,11 @@ public class DaoImpl implements Dao {
         return list;
     }
 
-    @Override
-    public List<Student> getAllStudent(String email) {
-        Connection con = null;
-        List<Student> list = new ArrayList<Student>();
-
-        try {
-            con = openConnection();
-            String qs = "select name,email,branch from Student where email=?";
-            PreparedStatement ps = con.prepareStatement(qs);
-            ps.setString(1, mail);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Student s = new Student();
-
-                s.setName(rs.getString(1));
-                s.setEmail(rs.getString(2));
-                s.setBranch(rs.getString(3));
-                list.add(s);
-            }
-        } catch (SQLException f) {
-            System.out.println(f.getMessage());
-        } finally {
-            closeConnection(con);
-        }
-        return list;
-    }
+    
 
     @Override
     public String AddAdmin(String name, String email, String password) {
         return "susa";
     }
+    
 }
