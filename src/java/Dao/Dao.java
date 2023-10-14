@@ -12,8 +12,8 @@ public interface Dao {
     public String generatePassword(String ename, String email);
     public boolean addResult(String email,String branch,Double CGPA);
     //for departments
-    public List<Student> getAllDepartment(String branch);
-    public List<Student> getAllStudent(String email);
+   public List<Student> getAllDepartment(String branch);
+    public List<Student> getStudent(String email);
 
     //for HR 
     public String AddAdmin(String name,String email,String password);
