@@ -312,4 +312,9 @@ public class DaoImpl implements Dao {
         }
         return Ufee;
     }
+    
+    @Override
+    public String AddAdmin(String name, String email, String password) {
+        return "Sudipt";
+    }
 }

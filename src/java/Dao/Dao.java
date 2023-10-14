@@ -14,5 +14,6 @@ public interface Dao {
     //for departments
     public List<Student> getAllDepartment(String branch);
     public List<Student> getStudent(String email);
-    
+    //
+    public String AddAdmin(String name,String email,String password);
 }
