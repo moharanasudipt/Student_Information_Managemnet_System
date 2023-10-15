@@ -9,7 +9,7 @@ public class showDepartment extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-
+        
         try {            
             String branch = request.getParameter("branch");           
             System.out.println(branch);
@@ -22,6 +22,7 @@ public class showDepartment extends HttpServlet {
             if (stlist!=null) {
                 System.out.println("SUCCESS");
                 request.setAttribute("allStudent", stlist);
+                request.setAttribute("branch", branch);
                 RequestDispatcher rd = request.getRequestDispatcher("showDepartment.jsp");
                 rd.forward(request, response);
 
