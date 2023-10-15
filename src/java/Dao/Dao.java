@@ -12,7 +12,7 @@ public interface Dao {
     public boolean addResult(String email,String branch,Double CGPA);
     public int updateFees(int CurrentFee,int AmountFee,String email);
     
-    public List<Student> updateStudent(int id,String name,String address,int age,String guardianName,String email,Long contact);
+    public boolean updateStudent(int id,String name,String address,int age,String guardianName,String email,Long contact);
     //for departments
     public List<Student> getAllDepartment(String branch);
     public List<Student> getStudent(String email);
