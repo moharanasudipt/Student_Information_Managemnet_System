@@ -34,7 +34,7 @@ public class DaoImpl implements Dao {
         return connection;
     }
 
-    // Close Connection
+    //Close Connection
     private void closeConnection(Connection connection) {
 
         try {
@@ -80,7 +80,7 @@ public class DaoImpl implements Dao {
         return role;
     }
 
-    // for check the student role
+    //for check the student role
     @Override
     public String checkS(String email, String password) {
         Connection con = null;
@@ -90,7 +90,7 @@ public class DaoImpl implements Dao {
             System.out.println("CheckConnection" + con);
             if (con != null) {
                 System.out.println("check method Student");
-                String qs = "select Role from student WHERE EMAIL=? AND PASSWORD=?";
+                String qs = "select role from student WHERE EMAIL=? AND PASSWORD=?";
                 PreparedStatement ps = con.prepareStatement(qs);
                 ps.setString(1, email);
                 ps.setString(2, password);
@@ -113,10 +113,9 @@ public class DaoImpl implements Dao {
         return role;
     }
 
-    // for registering student
+    //for registering student
     @Override
-    public boolean addStudent(String name, String address, int age, String dob, int contact, String gender,
-            String gname, String mail, String branch, String password, String photo) {
+    public boolean addStudent(String name, String address, int age, String dob, Long contact, String gender, String gname, String mail, String branch, String password, String photo) {
         boolean flag = false;
         try {
 
@@ -131,7 +130,7 @@ public class DaoImpl implements Dao {
                 ps.setString(2, address);
                 ps.setInt(3, age);
                 ps.setString(4, dob);
-                ps.setInt(5, contact);
+                ps.setLong(5, contact);
                 ps.setString(6, gender);
                 ps.setString(7, gname);
                 ps.setString(8, mail);
@@ -157,7 +156,7 @@ public class DaoImpl implements Dao {
 
     }
 
-    // for auto-generate password
+    //for auto-generate password
     @Override
     public String generatePassword(String ename, String email) {
         String inputForPassword = ename + email;
@@ -196,7 +195,7 @@ public class DaoImpl implements Dao {
             System.out.println("addResult:" + con);
             if (con != null) {
                 System.out.println("Result added");
-                String qs = "update student set CGPA=? where email = ? and Branch = ?";
+                String qs = "update student set cgpa=? where email = ? and branch = ?";
                 PreparedStatement ps = con.prepareStatement(qs);
 
                 ps.setDouble(1, CGPA);
@@ -218,9 +217,43 @@ public class DaoImpl implements Dao {
         return flag;
     }
 
-   
     @Override
-   public List<Student> getStudent(String email) {
+    public List<Student> getAllDepartment(String branch) {
+        Connection con = null;
+        List<Student> list = new ArrayList<Student>();
+        try {
+            con = openConnection();
+            System.out.println(con);
+            if (con != null) {
+                System.out.println("branch show ");
+                String s = "select id,name,address,age,GuardianName,email,cgpa,contact from student where branch=?";
+                PreparedStatement ps = con.prepareStatement(s);
+                ps.setString(1, branch);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    Student e = new Student();
+                    e.setId(rs.getInt(1));
+                    e.setName(rs.getString(2));
+                    e.setAddress(rs.getString(3));
+                    e.setAge(rs.getInt(4));
+                    e.setGuardianName(rs.getString(5));
+                    e.setEmail(rs.getString(6));
+                    e.setCgpa(rs.getDouble(7));
+                    e.setContact(rs.getLong(8));
+
+                    list.add(e);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(con);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Student> getStudent(String email) {
         Connection con = null;
         List<Student> list = new ArrayList<Student>();
         try {
@@ -279,48 +312,9 @@ public class DaoImpl implements Dao {
         }
         return Ufee;
     }
-
-
-    @Override
-    public List<Student> getAllDepartment(String branch) {
-        Connection con = null;
-        List<Student> list = new ArrayList<Student>();
-        try {
-            con = openConnection();
-            System.out.println(con);
-            if (con != null) {
-                System.out.println("branch show ");
-                String s = "select id,name,address,age,GuardianName,email,cgpa,contact from student where branch=?";
-                PreparedStatement ps = con.prepareStatement(s);
-                ps.setString(1, branch);
-                ResultSet rs = ps.executeQuery();
-                while (rs.next()) {
-                    Student e = new Student();
-                    e.setId(rs.getInt(1));
-                    e.setName(rs.getString(2));
-                    e.setAddress(rs.getString(3));
-                    e.setAge(rs.getInt(4));
-                    e.setGuardianName(rs.getString(5));
-                    e.setEmail(rs.getString(6));
-                    e.setCgpa(rs.getDouble(7));
-                    e.setContact(rs.getLong(8));
-
-                    list.add(e);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            closeConnection(con);
-        }
-        return list;
-    }
-
     
-
     @Override
     public String AddAdmin(String name, String email, String password) {
-        return "susa";
+        return "Sudipt";
     }
-    
 }

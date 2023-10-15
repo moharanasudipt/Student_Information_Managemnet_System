@@ -2,20 +2,20 @@ package Model;
 
 public class Student {
     private int id;
-    private String Name;
-    private String Address;
-    private int Age;
-    private String DOB;
-    private int contact;
-    private String Gender;
-    private String GuardianName;
-    private String Email;
-    private String Password;
-    private String Photo;
-    private String Branch;
-    private Double CGPA;
-    private int Fees;
-    private String Role;
+    private String name;
+    private String address;
+    private int age;
+    private String dob;
+    private long contact;
+    private String gender;
+    private String guardianName;
+    private String email;
+    private String password;
+    private String photo;
+    private String branch;
+    private Double cgpa;
+    private int fees;
+    private String role;
 
     public int getId() {
         return id;
@@ -26,115 +26,115 @@ public class Student {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
-    public void setAge(int Age) {
-        this.Age = Age;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getDOB() {
-        return DOB;
+    public String getDob() {
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-    public int getContact() {
+    public long getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(long contact) {
         this.contact = contact;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
-    public void setGender(String Gender) {
-        this.Gender = Gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getGuardianName() {
-        return GuardianName;
+        return guardianName;
     }
 
-    public void setGuardianName(String GuardianName) {
-        this.GuardianName = GuardianName;
+    public void setGuardianName(String guardianName) {
+        this.guardianName = guardianName;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhoto() {
-        return Photo;
+        return photo;
     }
 
-    public void setPhoto(String Photo) {
-        this.Photo = Photo;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getBranch() {
-        return Branch;
+        return branch;
     }
 
-    public void setBranch(String Branch) {
-        this.Branch = Branch;
+    public void setBranch(String branch) {
+        this.branch = branch;
     }
 
-    public Double getCGPA() {
-        return CGPA;
+    public Double getCgpa() {
+        return cgpa;
     }
 
-    public void setCGPA(Double CGPA) {
-        this.CGPA = CGPA;
+    public void setCgpa(Double cgpa) {
+        this.cgpa = cgpa;
     }
 
     public int getFees() {
-        return Fees;
+        return fees;
     }
 
-    public void setFees(int Fees) {
-        this.Fees = Fees;
+    public void setFees(int fees) {
+        this.fees = fees;
     }
 
     public String getRole() {
-        return Role;
+        return role;
     }
 
-    public void setRole(String Role) {
-        this.Role = Role;
+    public void setRole(String role) {
+        this.role = role;
     }
-    
+
 }

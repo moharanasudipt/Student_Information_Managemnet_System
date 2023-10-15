@@ -3,11 +3,11 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>LoginServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
         <init-param>
             <param-name>HR_ID</param-name>
             <param-value>susant@gmail.com</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>addResult</servlet-name>
@@ -32,6 +32,14 @@
     <servlet>
         <servlet-name>logout</servlet-name>
         <servlet-class>logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateStudent</servlet-name>
+        <servlet-class>updateStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteStudent</servlet-name>
+        <servlet-class>deleteStudent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -60,6 +68,14 @@
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateStudent</servlet-name>
+        <url-pattern>/updateStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteStudent</servlet-name>
+        <url-pattern>/deleteStudent</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

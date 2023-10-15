@@ -8,8 +8,7 @@ import java.util.List;
 public class showDepartment extends HttpServlet {
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 
         try {            
             String branch = request.getParameter("branch");           
@@ -18,16 +17,17 @@ public class showDepartment extends HttpServlet {
             ServletContext context = getServletContext();
             Dao dao = (Dao) context.getAttribute("db");
           
-            List<Student> flag = dao.getAllDepartment( branch);
-            if (flag!=null) {
+            List<Student> stlist = dao.getAllDepartment(branch);
+            System.out.println(stlist);
+            if (stlist!=null) {
                 System.out.println("SUCCESS");
-                request.setAttribute("status", "SUCCESS");
-                RequestDispatcher rd = request.getRequestDispatcher("showDepartment.html");
+                request.setAttribute("allStudent", stlist);
+                RequestDispatcher rd = request.getRequestDispatcher("showDepartment.jsp");
                 rd.forward(request, response);
 
             } else {
                 request.setAttribute("status", "FAILED");
-                RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
+                RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
                 rd.forward(request, response);
             }
         } catch (Exception e) {

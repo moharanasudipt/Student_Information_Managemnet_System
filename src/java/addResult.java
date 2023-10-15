@@ -12,7 +12,7 @@ public class addResult extends HttpServlet {
         try {            
             String email = request.getParameter("email");
             String branch = request.getParameter("branch");
-            Double cgpa = Double.parseDouble(request.getParameter("cgpa"));
+            Double cgpa = Double.valueOf(request.getParameter("cgpa"));
             
             System.out.println(email);
             System.out.println(branch);
