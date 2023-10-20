@@ -48,5 +48,4 @@ public class updateStudent extends HttpServlet {
             e.printStackTrace();
         }
     }
-
 }
