@@ -4,12 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="icon" href="user.png">
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/8601a8c761.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="admin_main.css">
         <link rel="stylesheet" href="nav.css">
-
-        <title>Admin Dashboard</title>
+        <title>Add Fees</title>
     </head>
     <body>
         <nav class="navbar fixed-top">
@@ -17,11 +17,11 @@
                 <img src="./software-engineer.png" alt="admin" id="pic">&emsp;<b>Admin Dashboard</b></div>
             <div class="options">
                 <ul>
-                    <li><a href="Admin.jsp"><input type="button" value="Home" class="link"></a></li>
+                    <li><a href="StudentDetailAdmin"><input type="button" value="Home" class="link"></a></li>
                     <li><a href="addStudent.html"><input type="button" value="Add Student" class="link"></a></li>
                     <li><a href="addFees.jsp"><input type="button" value="Add Fees" class="link"></a></li>
                     <li><a href="addResult.html"><input type="button" value="Add Result" class="link"></a></li>
-                    <li id="name">Sudipt</li>
+                    <li id="name"><b><%=session.getAttribute("AdminName")%></b></li>
                     <li><a href="logout"><img src="./switch.png" alt="logout"></a></li>
                 </ul>
             </div>
