@@ -446,5 +446,26 @@ public class DaoImpl implements Dao {
         }
         return list;
     }
+    //For delete admin
+    @Override
+    public boolean deleteAdmin(String email){
+        Connection con = null;  
+        boolean flag=false;
+        try {
+            con = openConnection();            
+            String qs = "delete from Admin where email = ?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, email);
+            int res = ps.executeUpdate();
+            if (res == 1) { 
+                flag=true;
+                System.out.println("Admin deleted successfully:");
+            }
+        } catch (Exception e) {
+        } finally {
+            closeConnection(con);
+        }
+        return flag;
+    }
       
 }
