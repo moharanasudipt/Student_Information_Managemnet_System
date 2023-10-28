@@ -467,5 +467,10 @@ public class DaoImpl implements Dao {
         }
         return flag;
     }
+
+    //For Adding Admin
+    @Override
+    public boolean AddAdmin(String name, String email, String password,String photo) {
+        
       
 }
