@@ -99,6 +99,26 @@
                 </div>
             </div>
         </div> 
-      
+        <script>
+            const passwordInput = document.getElementById("password");
+            const reenterPasswordInput = document.getElementById("reenterPassword");
+            const passwordMatchMessage = document.getElementById("passwordMatchMessage");
+
+            passwordInput.addEventListener("input", checkPasswordMatch);
+            reenterPasswordInput.addEventListener("input", checkPasswordMatch);
+
+            function checkPasswordMatch() {
+                const password = passwordInput.value;
+                const reenterPassword = reenterPasswordInput.value;
+
+                if (password === reenterPassword) {
+                    passwordMatchMessage.textContent = "Passwords match!";
+                    passwordMatchMessage.style.color = "green";
+                } else {
+                    passwordMatchMessage.textContent = "Passwords do not match.";
+                    passwordMatchMessage.style.color = "red";
+                }
+            }
+        </script>
     </body>
 </html>
