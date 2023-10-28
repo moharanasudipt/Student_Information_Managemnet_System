@@ -33,4 +33,6 @@ public interface Dao {
     //HR
     public List<HR> HRDetails();
 
+    public boolean deleteAdmin(String email);
+
 }
