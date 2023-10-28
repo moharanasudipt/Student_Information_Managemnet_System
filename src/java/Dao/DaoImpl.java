@@ -471,6 +471,35 @@ public class DaoImpl implements Dao {
     //For Adding Admin
     @Override
     public boolean AddAdmin(String name, String email, String password,String photo) {
+        boolean flag = false;
+        try {
+
+            Connection con = openConnection();
+            System.out.println("Admin:" + con);
+            if (con != null) {
+                System.out.println("admin addred");
+                String qs = "insert into Admin(name,email,password,photo) values(?,?,?,?)";
+                PreparedStatement ps = con.prepareStatement(qs);
+
+                ps.setString(1, name);
+                ps.setString(2, email);
+                ps.setString(3, password);
+                ps.setString(4, photo);
+                
+                int result = ps.executeUpdate();
+                if (result == 1) {
+                    flag = true;
+                    System.out.println("inserted Admin: " + flag);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(con);
+        }
+        return flag;
+    }
         
       
 }
