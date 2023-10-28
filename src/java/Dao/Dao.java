@@ -32,6 +32,8 @@ public interface Dao {
     public List<Student> getStudent(String email);
     //HR
     public List<HR> HRDetails();
+    
+    public boolean AddAdmin(String name,String email,String password,String photo);
 
     public boolean deleteAdmin(String email);
 
