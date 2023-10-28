@@ -217,6 +217,7 @@ public class DaoImpl implements Dao {
         return flag;
     }
 
+    //department wise fetch students
     @Override
     public List<Student> getAllDepartment(String branch) {
         Connection con = null;
@@ -252,6 +253,7 @@ public class DaoImpl implements Dao {
         return list;
     }
 
+    //in Update page and retrive data in student page also 
     @Override
     public List<Student> getStudent(String email) {
         Connection con = null;
@@ -287,9 +289,9 @@ public class DaoImpl implements Dao {
 
     //for update fees
     @Override
-    public int updateFees(int CurrentFee,int AmountFee ,String email) {
+    public int updateFees(int CurrentFee, int AmountFee, String email) {
         Connection con = null;
-        int Ufee= 0;
+        int Ufee = 0;
         try {
             con = openConnection();
             String Proc = "{call Fees(?,?,?)}";
@@ -298,23 +300,151 @@ public class DaoImpl implements Dao {
             cs.setInt(1, CurrentFee);
             cs.setInt(2, AmountFee);
             cs.execute();
-            Ufee=cs.getInt(3);
-            System.out.println("Updated fee"+Ufee);
-            String ps= "update student set fees=? where email=?";
-            
-            PreparedStatement pst= con.prepareStatement(ps);
+            Ufee = cs.getInt(3);
+            System.out.println("Updated fee" + Ufee);
+            String ps = "update student set fees=? where email=?";
+
+            PreparedStatement pst = con.prepareStatement(ps);
             pst.setInt(1, Ufee);
             pst.setString(2, email);
-            int result=pst.executeUpdate();
-            System.out.println("Updated Result"+result);
-            
+            int result = pst.executeUpdate();
+            System.out.println("Updated Result" + result);
+
         } catch (Exception e) {
         }
         return Ufee;
     }
-    
+
+    //for edit student
     @Override
-    public String AddAdmin(String name, String email, String password) {
-        return "Sudipt";
+    public boolean updateStudent(int id, String name, String address, int age, String guardianName, String email, Long contact) {
+        Connection con = null;
+        boolean flg = false;
+        try {
+            con = openConnection();
+            String qs = "update student set name=?,address=?,age=?,GuardianName=?,email=?,contact=? where id=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, name);
+            ps.setString(2, address);
+            ps.setInt(3, age);
+            ps.setString(4, guardianName);
+            ps.setString(5, email);
+            ps.setLong(6, contact);
+            ps.setInt(7, id);
+
+            int rs = ps.executeUpdate();
+            if (rs != 0) {
+                flg = true;
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return flg;
     }
+
+    //for get all admin details
+    @Override
+    public List<Admin> getAdminDetails(String email) {
+        Connection con = null;
+        List<Admin> list = new ArrayList<Admin>();
+        try {
+            con = openConnection();
+            String qs = "select id,name,email,photo from Admin where email=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Admin s = new Admin();
+                s.setId(rs.getInt(1));
+                s.setName(rs.getString(2));
+                s.setEmail(rs.getString(3));
+                s.setPhoto(rs.getString(4));
+                list.add(s);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return list;
+    }
+    
+    //for student details
+    @Override
+    public List<Student> getAllStudentDetails() {
+        Connection con = null;
+        List<Student> list = new ArrayList<Student>();
+        try {
+            con = openConnection();
+            String qs = "select id,name,address,age,GuardianName,email,branch,contact from Student";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt(1));
+                s.setName(rs.getString(2));
+                s.setAddress(rs.getString(3));
+                s.setAge(rs.getInt(4));
+                s.setGuardianName(rs.getString(5));
+                s.setEmail(rs.getString(6));
+                s.setBranch(rs.getString(7));
+                s.setContact(rs.getLong(8));
+                list.add(s);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return list;
+    }
+
+    //for delete student
+    @Override
+    public boolean deleteStudent(int id) {
+        Connection con = null;
+        boolean flag = false;
+        try {
+            con = openConnection();
+            String qs = "delete from student where id = ?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setInt(1, id);
+            int res = ps.executeUpdate();
+            if (res == 1) {
+                flag = true;
+                System.out.println("Record deleted successfully:");
+            }
+        } catch (Exception e) {
+        } finally {
+            closeConnection(con);
+        }
+        return flag;
+    }
+    
+    //For HR details
+    @Override
+    public List<HR> HRDetails(){
+        Connection con = null;
+        List<HR> list = new ArrayList<HR>();
+        try {
+            con = openConnection();
+            String qs = "select name,photo from HR";
+            PreparedStatement ps = con.prepareStatement(qs);            
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                HR hr = new HR();                
+                hr.setName(rs.getString(1));                                
+                hr.setPhoto(rs.getString(2));                
+                list.add(hr);
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return list;
+    }
+      
 }

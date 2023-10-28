@@ -66,7 +66,5 @@ public class addSudentServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }

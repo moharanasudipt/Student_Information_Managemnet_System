@@ -5,7 +5,7 @@ $(document).ready(function () {
         const nameError = $("#nameError");
         const nameRegex = /^[A-Za-z\s]+$/;
 
-        if (!nameField.val().match(nameRegex) || nameField.val().trim().length > 20) {
+        if (!nameField.val().match(nameRegex) || nameField.val().trim().length > 30) {
             nameError.text("Invalid name format.");
             return false;
         } else {
@@ -17,9 +17,9 @@ $(document).ready(function () {
     function validateAddress() {
         const addrField = $("#address");
         const addressError = $("#addressError");
-        const addrRegex = /^[A-Za-z\s]{1,12}$/;
+        const addrRegex = /^[A-Za-z\s]{1,20}$/;
 
-        if (!addrField.val().match(addrRegex) || addrField.val().trim().length > 12) {
+        if (!addrField.val().match(addrRegex) || addrField.val().trim().length > 20) {
             addressError.text("Invalid address format.");
             return false;
         } else {
@@ -55,13 +55,11 @@ $(document).ready(function () {
             return true;
         }
     }
-
-
+    
     $("#name").blur(validateName);
     $("#address").blur(validateAddress);
     $("#email").blur(validateEmail);
     $("#contact").blur(validateContact);
-
 
     $("form").submit(function (event) {
         if (!validateName() || !validateAddress() || !validateEmail() || !validateContact()) {

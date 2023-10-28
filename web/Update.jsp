@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.*,Model.Student" %>
+<%@ page import="java.util.*,Model.Student,SIMS.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@
                             <h3 class="p"> Edit Student Details</h3>
                         </div>
                         <div class="card-body" id="cardBody">
-                            <form action="fs3" method="get" onsubmit="return validateForm()">
+                            <form action="updateStudent" method="get" onsubmit="return validateForm()">
                                 <div class="form-group">
                                     <label for="id" class="i">Enter ID</label>
                                     <input type="text" class="form-control " id="id" name="id" value='<%= request.getParameter("id")%>' readonly=true />
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="gname" class="i">Enter Guardian Name</label>
-                                    <input type="text" class="form-control " id="gname" name="gname" />
+                                    <input type="text" class="form-control " id="gname" name="gname" required/>
                                     <span id="gnameError" class="error"></span>
                                 </div>
                                 <div class="form-group">
@@ -89,6 +89,7 @@
                                     <input type="text" class="form-control " id="contact" name="contact" />
                                     <span id="contactError" class="error"></span>
                                 </div>
+                                <input type="hidden" name="branch"  value='<%= request.getParameter("branch")%>'/>
                                 <button type="submit" class="btn btn-danger">Submit</button>
                             </form>
                         </div>

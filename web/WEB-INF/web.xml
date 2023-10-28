@@ -7,6 +7,10 @@
             <param-name>HR_ID</param-name>
             <param-value>susant@gmail.com</param-value>
         </init-param>
+        <init-param>
+            <param-name>HR_PWD</param-name>
+            <param-value>SUSANT123</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
@@ -40,6 +44,26 @@
     <servlet>
         <servlet-name>deleteStudent</servlet-name>
         <servlet-class>deleteStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentDetailAdmin</servlet-name>
+        <servlet-class>StudentDetailAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForgetPassword</servlet-name>
+        <servlet-class>ForgetPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addAdmin</servlet-name>
+        <servlet-class>addAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteAdmin</servlet-name>
+        <servlet-class>deleteAdmin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -76,6 +100,26 @@
     <servlet-mapping>
         <servlet-name>deleteStudent</servlet-name>
         <url-pattern>/deleteStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentDetailAdmin</servlet-name>
+        <url-pattern>/StudentDetailAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/HomeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgetPassword</servlet-name>
+        <url-pattern>/ForgetPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addAdmin</servlet-name>
+        <url-pattern>/addAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteAdmin</servlet-name>
+        <url-pattern>/deleteAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.*,Model.Student" %>
+<%@ page import="java.util.*,Model.Student,SIMS.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,21 +14,20 @@
             }
             h1{
                 text-rendering: auto;
-                text-shadow: 3px 3px 6px violet;
-                
+                text-shadow: 3px 3px 6px violet;                
             }
             th{
                 background-color: #ffcc66;
-            }
-            
+            }            
         </style>
     </head>
     <body>
+        <c:set var="branch1" value='${requestScope["branch"]}' />
         <section class="py-5">
             <div class="container bod">
                 
                 <h1>&nbsp;&nbsp;&nbsp;
-<a href="Admin.jsp"><button type="button" class="btn btn-warning">HOME</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="StudentDetailAdmin"><button type="button" class="btn btn-warning">HOME</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 STUDENT REPOSITORY 
                 </h1>
                 <div class="row">
@@ -36,7 +35,7 @@ STUDENT REPOSITORY
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th > ID</th>
+                                    <th >ID</th>
                                     <th> Name</th>
                                     <th> Address</th>
                                     <th> Age</th>
@@ -79,8 +78,8 @@ STUDENT REPOSITORY
                                         <%--<c:set var="reqEmail" value="${Employee.email}" scope="request" />--%>
 
                                         <td>
-                                            <a href=Update.jsp?id=<c:out value='${Student.id}' />&email=<c:out value='${Student.email}' />><button type="button" class="btn btn-primary">EDIT</button></a>
-                                            <a href=DeleteServlet?del=<c:out value="${Student.id}" />><button type="button" class="btn btn-danger">Delete</button></a>
+                                            <a href=Update.jsp?id=<c:out value='${Student.id}' />&email=<c:out value='${Student.email}' />&branch=${branch1} /><button type="button" class="btn btn-primary">EDIT</button></a>
+                                            <a href=deleteStudent?del=<c:out value="${Student.id}" />&branch=${branch1} /><button type="button" class="btn btn-danger">Delete</button></a>
                                         </td>                                                                             
                                     </tr>
                                 </c:forEach>

@@ -14,15 +14,22 @@ public class deleteStudent extends HttpServlet {
         try {
              String branch = request.getParameter("branch");   
              id = Integer.parseInt(request.getParameter("del"));
+             System.out.println("delete servlet  "+branch);
+             System.out.println(" id "+id);
             ServletContext context = getServletContext();
             Dao d = (Dao) context.getAttribute("db");
-                d.deleteStudent(id);   
-                List<Student> stlist = d.getAllDepartment(branch);
-                if (stlist!=null) {
+            boolean delete= d.deleteStudent(id);   
+              if (delete) {
                 System.out.println("SUCCESS");
+                List<Student> stlist = d.getAllDepartment(branch);
+                request.setAttribute("allStudent", stlist);
                 RequestDispatcher rd = request.getRequestDispatcher("showDepartment.jsp");
                 rd.forward(request, response);
-            } 
+            } else {
+                request.setAttribute("status", "FAILED");
+                RequestDispatcher rd = request.getRequestDispatcher("Update.jsp");
+                rd.forward(request, response);
+            }
         } catch (ServletException | IOException | NumberFormatException r) {
             r.printStackTrace();
         }

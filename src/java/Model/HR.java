@@ -6,6 +6,15 @@ public class HR {
     private String Name;
     private String Email;
     private String Password;
+    private String Photo;
+
+    public String getPhoto() {
+        return Photo;
+    }
+
+    public void setPhoto(String Photo) {
+        this.Photo = Photo;
+    }
 
     public int getId() {
         return id;
