@@ -62,6 +62,28 @@
         </nav>
                         </section>
         <!--body-->
-        
+        <section>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-header" id="cardHeader">
+                            <h3 class="p"> Delete Admin</h3>
+                        </div>
+                        <div class="card-body" id="cardBody">
+                            <form action="deleteAdmin" method="post">                                                                
+                                <div class="form-group">
+                                    <label for="email" class="i">Enter Email:</label>
+                                    <input type="email" class="form-control " id="email" name="email" required />
+                                </div>                                                                                                                            
+                                <br>
+                                <button type="submit" class="btn btn-outline-warning">Delete</button>                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
     </body>
 </html>
