@@ -10,7 +10,32 @@
         <link href="HR.css" rel="stylesheet" />
         <link href="HR_btn.css" rel="stylesheet" />        
         <title>Delete Admin</title>
-        
+        <style>
+            body {
+                background-color: #ffffff;
+            }
+            .card {
+                background:url(Banner.jpeg);
+                background-size: cover;
+            }
+            * {
+                color: beige;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-style: oblique;
+            }
+            .p{
+                text-align: center;
+                text-shadow: 2px 2px 5px rgb(249, 162, 0);
+                text-decoration: wavy;
+                margin-top: 20px;
+            }
+            .card{
+                box-shadow: 6px 3px 42px rgb(104, 79, 5);
+            }
+            .i{
+                font: bolder;
+            }            
+        </style>
     </head>
     <body>
         <!--navbar-->
