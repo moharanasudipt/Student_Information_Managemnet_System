@@ -1,0 +1,140 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+
+body{
+     height: 100vh;
+     background: linear-gradient(to right, darkslategray,black);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.page{
+     background-color: white;
+     height: 90%;
+     width: 90%;
+     border-radius: 20px;
+     padding: 20px;
+     display: grid;
+     gap: 23px;
+     grid-template-columns: 31% 34% 31%;
+}
+
+.left{
+     background:linear-gradient(to left,white,gainsboro);
+}
+
+.center{
+     margin: 40px 0;
+     border: 2px solid gainsboro;
+     box-shadow: 0 0 10px 2px gray;
+     border-radius: 10%;
+}
+
+.right{
+     background:linear-gradient(to right,white,gainsboro);
+}
+
+.userimage{
+     width: 25%;
+     border-radius: 50%;
+}
+
+.userimage:hover{
+     transform: scale(120%);
+     border-radius: 50%;
+     box-shadow: 0 0 10px 2px blue;
+}
+
+.image{
+     margin-top: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.content{
+     display: grid;
+     grid-template-columns: 45% 65%;
+     margin: 8% 14%;
+     row-gap: 10%;
+}
+
+.valuelabel{
+     font-weight: bold;
+     font-size: larger;
+     color: blue;
+     font-family: 'Dosis', sans-serif;
+}
+
+.valueinput{
+     font-size: larger;
+     border: none;
+     font-family: 'Pacifico', cursive;
+}
+
+.logo{
+     margin: 10%;
+     margin-bottom: 0;
+     display: flex;
+     align-items: center;
+}
+
+.logoimage{
+     width: 70%;
+     background: none;
+}
+
+.quote{
+     margin:10% 5%;
+     font-size: large;
+     font-weight: bold;
+     color: purple;
+}
+
+.navigate{
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.navbuttons{
+     width: 50%;
+     padding: 10px;
+     margin: 3% 0;
+     font-weight: bold;
+     background-color: turquoise;
+     color:darkblue;
+     border: 2px solid blueviolet;
+}
+
+.navbuttons:hover{
+     background-color: darkblue;
+     border: 2px solid turquoise;
+     color: white;
+}
+
+.rcu{
+     margin-top: 20%;
+}
+
+.implabel{
+     color: indigo;
+}
+
+.impvalue{
+     background: none;
+}
+
+.editb{
+     background-color: greenyellow;
+     border: 2px solid blue;
+}
+
+.editb:hover{
+     background-color: darkgreen;
+}

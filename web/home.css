@@ -1,0 +1,121 @@
+* {
+     margin: 0;
+     padding: 0;
+}
+
+nav {
+     padding: 10px;
+     background-color: rgb(36, 62, 62);
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+.left{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.userimg{
+     margin-left: 10px;
+     height: 50px;
+     border-radius: 50%;
+}
+
+.webname{
+     font-family: 'Nosifer', sans-serif;
+     font-size: 30px;
+     margin-left: 30px;
+     font-weight: bold;
+}
+
+.right{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.username{
+     font-family: 'Nosifer', sans-serif;
+     font-size: 20px;
+     font-weight: bold;
+}
+
+.logoutbutton{
+     padding: 10px;
+     font-weight: bold;
+     margin-left: 30px;
+     margin-right: 20px;
+     background-color: red;
+     color: white;
+     border: none;
+}
+
+.logoutbutton:hover{
+     box-shadow: 0 0 10px 5px white;
+     border: 5px double black;
+     background-color: red;
+     border-radius: 10%;
+}
+
+.size{
+     height: 90vh;
+     justify-content: center;
+     align-items: center;
+}
+
+.container {
+     padding: 20px;
+     margin: 0 10%;
+     display: grid;
+     grid-template-columns: 34% 33% 34%;
+     column-gap: 30px;
+}
+
+.card {
+     width: 90%;
+     height: 90%;
+     box-shadow: 5px 40px 10px 5px rgb(207, 207, 207);
+}
+
+.image {
+     height: 70%;
+     width: 99%;
+}
+
+.text {
+     margin-top: 10px;
+     display: flex;
+     justify-content: center;
+     align-self: center;
+     padding: 0 30px;
+}
+
+.link {
+     background-color: black;
+     margin-top: 20px;
+     padding: 10px 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 15%;
+}
+
+.button {
+     color: white;
+     font-size: large;
+     background: none;
+     border: none;
+}
+
+.card:hover{
+     animation: animate 0.3s forwards;
+}
+
+@keyframes animate {
+     100% {
+               transform: scale3d(1.09, 1.09, 0.3);
+     }
+}
