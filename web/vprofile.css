@@ -57,7 +57,7 @@ body{
 
 .content{
      display: grid;
-     grid-template-columns: 45% 65%;
+     grid-template-columns: 50% 65%;
      margin: 8% 14%;
      row-gap: 10%;
 }
@@ -102,11 +102,16 @@ body{
      justify-content: center;
 }
 
+.navigation{
+     margin-top: 30%;
+}
+
 .navbuttons{
-     width: 50%;
-     padding: 10px;
-     margin: 3% 0;
+     width: 70%;
+     padding: 20px;
+     margin: 5% 0;
      font-weight: bold;
+     font-size: large;
      background-color: turquoise;
      color:darkblue;
      border: 2px solid blueviolet;
@@ -131,10 +136,24 @@ body{
 }
 
 .editb{
+     width: 50%;
+     padding: 10px;
+     margin: 5% 0;
+     font-weight: normal;
+     font-size: none;
      background-color: greenyellow;
      border: 2px solid blue;
 }
 
 .editb:hover{
      background-color: darkgreen;
+}
+
+.footer{
+     margin-top: 10%;
+     font-weight: bold;
+     color: darkblue;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
