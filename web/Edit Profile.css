@@ -2,3 +2,82 @@
      margin: 0;
      padding: 0;
 }
+
+.page{
+     background: linear-gradient(black,white,white);
+}
+
+.userimage{
+     position: absolute;
+     width: 8%;
+     border-radius: 50%;
+     box-shadow: 0 0 20px 10px;
+     right: 46%;
+     top: 13%;
+}
+
+.table{
+display: flex;
+justify-content: center;
+}
+
+.pagecontent{
+     background-color: white;
+     width: 93vw;
+     display: grid;
+     grid-template-columns: 50% 50%;
+     grid-row: 90%;
+}
+
+.left{
+     padding: 10%;
+     padding-left: 30%;
+}
+
+.right{
+     padding: 10%;
+     padding-left: 25%;
+}
+
+.nav{
+     border: 5px solid black;
+     border-radius: 50px;
+     width: 98.3vw;
+     height: 20vh;
+}
+
+.valuelabel1{
+     font-weight: bold;
+     font-size: larger;
+     color: darkred;
+     font-family: 'Dosis', sans-serif;
+}
+
+.valuelabel2{
+     font-weight: bold;
+     font-size: larger;
+     color: darkblue;
+     font-family: 'Dosis', sans-serif;
+}
+
+.valueinput{
+     padding: 0 10px;
+     border: 2px solid white;
+     border-radius: 20px;
+     font-size: larger;
+     border: none;
+     font-family: 'Pacifico', cursive;
+}
+
+.content{
+     display: grid;
+     row-gap: 20px;
+     grid-template-columns: 30% 50%;
+}
+
+.valueinput:hover{
+     border: 2px solid white;
+     background: linear-gradient(to right,darkred,blue);
+     box-shadow: 0 0 4px 2px black;
+     color: white;
+}
