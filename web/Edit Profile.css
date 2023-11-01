@@ -42,7 +42,7 @@ justify-content: center;
 .nav{
      border: 5px solid black;
      border-radius: 50px;
-     width: 98.3vw;
+     width: 99.3vw;
      height: 20vh;
 }
 
@@ -72,12 +72,58 @@ justify-content: center;
 .content{
      display: grid;
      row-gap: 20px;
-     grid-template-columns: 30% 50%;
+     grid-template-columns: 40% 55%;
 }
 
 .valueinput:hover{
      border: 2px solid white;
      background: linear-gradient(to right,darkred,blue);
      box-shadow: 0 0 4px 2px black;
+     color: white;
+}
+
+.buttonimg{
+     border: none;
+}
+
+.footer{
+     margin-top: 5%;
+     width: 90vw;
+     display: flex;
+     align-items: center;
+     color: white;
+     font-family: 'Dosis', sans-serif;
+     font-weight: bold;
+     font-size: larger;
+     background: linear-gradient(to right ,white,black,white);
+}
+
+.imglogo{
+     width: 15%;
+}
+
+.copyright{
+     margin-left: 30%;
+}
+
+.action{
+     width: 200%;
+     display: flex;
+     justify-content: center;
+}
+
+.buttonsubmit{
+     width: 20%;
+     padding: 10px;
+     background: linear-gradient(to left,green,blue);
+     color: white;
+     font-family: 'Dosis', sans-serif;
+     font-weight: bold;
+     font-size: large;
+     border-radius: 20px;
+}
+
+.buttonsubmit:hover{
+     background: linear-gradient(to left,blue,green);
      color: white;
 }

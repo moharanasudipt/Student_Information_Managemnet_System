@@ -3,7 +3,7 @@
      padding: 0;
 }
 
-body{
+.body{
      height: 100vh;
      background: linear-gradient(to right, darkslategray,black);
      display: flex;

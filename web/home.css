@@ -119,3 +119,13 @@ nav {
                transform: scale3d(1.09, 1.09, 0.3);
      }
 }
+
+.footer{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     margin-top:1%;
+     height: 10vh;
+     background-color: darkslategray;
+}

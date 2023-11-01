@@ -1,0 +1,79 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+
+.page{
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: url(./back.jpg) no-repeat;
+     background-size: cover;
+}
+
+.contents{
+     height: 90vh;
+     width: 70vw;
+     background-color: white;
+     border: 3px solid blue;
+     border-radius: 20px;
+}
+
+.header{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.logo{
+     height: 8rem;
+}
+
+.valuelabel{
+     font-weight: bold;
+     padding: 10px;
+     font-size: larger;
+     color: blue;
+     font-family: 'Dosis', sans-serif;
+}
+
+.valueinput{
+     font-size: larger;
+     border: none;
+     font-family: 'Pacifico', cursive;
+}
+
+.info{
+     width: 95%;
+     margin: 2%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.infocontent{
+     margin-left: 8%;
+     display: grid;
+     grid-template-columns: 50% 50%;
+}
+
+.navigate{
+     text-decoration: none;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.button{
+     font-family: 'Dosis', sans-serif;
+     font-size: large;
+     padding: 10px;
+     width: 20%;
+     height: 20%;
+     background: linear-gradient(to left, lightgreen,lightblue);
+}
+
+.button:hover{
+     background: linear-gradient(to right, green,blue);
+     color: white;
+}
