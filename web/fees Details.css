@@ -1,0 +1,96 @@
+* {
+     padding: 0;
+     margin: 0;
+}
+
+.background {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: url(./feeback.jpg) no-repeat;
+     background-size: cover;
+     width: 100vw;
+     height: 100vh;
+}
+
+.page {
+     background-color: white;
+     height: 75%;
+     width: 55%;
+     border: 5px solid goldenrod;
+     border-radius: 30px;
+}
+
+.pagecontent {
+     margin: 15px;
+}
+
+.userimage {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.userimg {
+     margin-top: 30px;
+     border-radius: 50%;
+     width: 15%;
+}
+
+.content {
+     border-collapse: collapse;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+}
+
+.content th,
+.content td {
+     border: 1px solid white;
+     padding: 10px;
+     text-align: center;
+}
+
+.content th {
+     background-color: teal;
+     color: white;
+}
+
+.content tr:nth-child(even) {
+     background-color: rgb(247, 255, 234);
+}
+
+.content tr:nth-child(odd) {
+     background-color: rgb(215, 251, 255);
+}
+
+.content tr:hover {
+     background-color: rgb(166, 203, 255);
+}
+
+ul.itemcontains {
+     list-style: circle;
+     margin-left: 37%;
+}
+
+.key{
+     font-size: larger;
+     color: rgb(48, 36, 126);
+     display: inline;
+}
+
+.value{
+     font-family: 'Edu TAS Beginner', cursive;
+     font-size: larger;
+     margin-left: 20px;
+     display: inline;
+}
+
+.details{
+     margin-top: 20px;
+}
+.input{
+     width: 40%;
+     background: none;
+     border: none;
+}
