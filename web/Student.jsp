@@ -1,3 +1,8 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.*,Model.Student,SIMS.*" %>
+<% if(session.getAttribute("StudentName")==null) 
+{ response.sendRedirect("Login.html"); } 
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -303,5 +308,106 @@
 
         </style>
     </head>
-             
-                     </html>
+
+         <body>
+                <%  
+                    String Sname=request.getParameter("name");
+                    String Sphoto=request.getParameter("image");
+                    if(Sname!=null){
+                    HttpSession session1=request.getSession();
+                    session1.setAttribute("StudentPhoto",Sphoto);
+                    session1.setAttribute("StudentName",Sname);                  
+                    }
+                %>   
+        <nav>
+            <div class="left">
+                <img src='<%=session.getAttribute("StudentPhoto")%>' alt="user" class="userimg">
+                <button class="uiverse">
+                    <div class="wrapper">
+                        <span>SIMS</span>
+                        <div class="circle circle-12"></div>
+                        <div class="circle circle-11"></div>
+                        <div class="circle circle-10"></div>
+                        <div class="circle circle-9"></div>
+                        <div class="circle circle-8"></div>
+                        <div class="circle circle-7"></div>
+                        <div class="circle circle-6"></div>
+                        <div class="circle circle-5"></div>
+                        <div class="circle circle-4"></div>
+                        <div class="circle circle-3"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-1"></div>
+                    </div>
+                </button>
+
+            </div>
+            <div class="right">
+                <div class="username"><%=session.getAttribute("StudentName")%></div>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             
+                <a href="logout"><button type="submit" class="btn2">LOGOUT</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </nav>             
+        <div class="size">
+            <div class="container">
+                <%  
+                    String mail=request.getParameter("email");
+                    if(mail!=null){
+                    request.setAttribute("StudentEmail",mail);
+                    }
+                %>                
+                <div class="card">
+                    <img src="./profile.PNG" alt="profile pic" class="image">
+                    <div class="text">
+                        Click here to view your profile
+                    </div>
+                    <a href=studentProfile?email=<%= request.getAttribute("StudentEmail")%> style="text-decoration: none;">
+                        <div class="link">
+                            <button type="button" class="button">PROFILE</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <img src="./exam.PNG" alt="result pic" class="image">
+                    <div class="text">
+                        Click here to view your result
+                    </div>
+                    <a href=viewStudentResult?email=<%= request.getAttribute("StudentEmail")%> style="text-decoration: none;">
+                        <div class="link">
+                            <button type="button" class="button">RESULT</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <img src="./fees.PNG" alt="fees pic" class="image">
+                    <div class="text">
+                        Click here to view your fees details
+                    </div>
+                    <a href=viewStudentFees?email=<%= request.getAttribute("StudentEmail")%> style="text-decoration: none;">
+                        <div class="link">
+                            <button type="button" class="button">FEES DETAILS</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <img src="./collageinfo.PNG" alt="fees pic" class="image">
+                    <div class="text">
+                        Click here to view the app info
+                    </div>
+                    <a href=appinfo.jsp?email=<%= request.getAttribute("StudentEmail")%> style="text-decoration: none;">
+                        <div class="link">
+                            <button type="button" class="button">APP INFO</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br><br>
+        <div class="footer">
+            <div class="copyright">
+                Copyright &copy; SIMS 2023
+            </div>
+        </div>
+    </body>    
+</html>
