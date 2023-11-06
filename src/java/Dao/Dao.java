@@ -30,6 +30,8 @@ public interface Dao {
     public List<Student> getAllDepartment(String branch);
 
     public List<Student> getStudent(String email);
+
+    public String resetPassword(String email, String password ,String CurrentPassword);
     //HR
     public List<HR> HRDetails();
     
