@@ -501,5 +501,43 @@ public class DaoImpl implements Dao {
         return flag;
     }
         
-      
+  @Override
+    public String resetPassword(String email, String CurrentPassword, String NewPassword) {
+        Connection con = null;
+        String pwd = null;
+        try {
+            con = openConnection();
+
+            String qs1 = "select name from student where email=? and password=?";
+            PreparedStatement ps = con.prepareStatement(qs1);
+            ps.setString(1, email);
+            ps.setString(2, CurrentPassword);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                pwd = rs.getString(1);
+            }
+
+            if (pwd != null) {
+                String qs = "update student set password=? where email=?";
+                PreparedStatement ps1 = con.prepareStatement(qs);
+                ps1.setString(1, NewPassword);
+                ps1.setString(2, email);
+                int rs1 = ps1.executeUpdate();
+                if (rs1 != 0) {
+                    pwd = "fuck susant";
+                } else {
+                    pwd = null;
+                }
+            } else {
+                pwd = null;
+            }
+
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return pwd;
+    }    
 }
