@@ -39,4 +39,7 @@ public interface Dao {
 
     public boolean deleteAdmin(String email);
 
+    //STUDENT
+    public boolean updateStudentInfo(String email, String name, String address, int age, String gender, String parent, long contact, String dob , String photo);
+
 }
