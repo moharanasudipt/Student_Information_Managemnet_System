@@ -539,5 +539,36 @@ public class DaoImpl implements Dao {
             closeConnection(con);
         }
         return pwd;
-    }    
+    }
+
+    //For Edit Student details
+    @Override
+    public boolean updateStudentInfo(String email, String name, String address, int age, String gender, String parent, long contact, String dob, String photo) {
+        Connection con = null;
+        boolean st = false;
+        try {
+            con = openConnection();
+            String qs = "update student set name=?,address=?,age=?,gender=?,GuardianName=?,contact=?,dob=?,photo=?  where email=?";
+            PreparedStatement ps = con.prepareStatement(qs);
+            ps.setString(1, name);
+            ps.setString(2, address);
+            ps.setInt(3, age);
+            ps.setString(4, gender);
+            ps.setString(5, parent);
+            ps.setLong(6, contact);
+            ps.setString(7, dob);
+            ps.setString(8, photo);
+            ps.setString(9, email);
+
+            int rs = ps.executeUpdate();
+            if (rs != 0) {
+                st = true;
+            }
+        } catch (SQLException f) {
+            System.out.println(f.getMessage());
+        } finally {
+            closeConnection(con);
+        }
+        return st;
+    }
 }
