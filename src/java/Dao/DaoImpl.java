@@ -525,7 +525,7 @@ public class DaoImpl implements Dao {
                 ps1.setString(2, email);
                 int rs1 = ps1.executeUpdate();
                 if (rs1 != 0) {
-                    pwd = "fuck susant";
+                    pwd = "pass";
                 } else {
                     pwd = null;
                 }
