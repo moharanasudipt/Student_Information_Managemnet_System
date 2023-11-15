@@ -146,6 +146,22 @@ public class EditStudentProfileFilter implements Filter {
             }
         }
     }
+public static String getStackTrace(Throwable t) {
+        String stackTrace = null;
+        try {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            t.printStackTrace(pw);
+            pw.close();
+            sw.close();
+            stackTrace = sw.getBuffer().toString();
+        } catch (Exception ex) {
+        }
+        return stackTrace;
+    }
 
+    public void log(String msg) {
+        filterConfig.getServletContext().log(msg);
+    }
     
 }
