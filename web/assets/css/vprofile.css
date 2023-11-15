@@ -19,7 +19,7 @@
      padding: 20px;
      display: grid;
      gap: 23px;
-     grid-template-columns: 31% 34% 31%;
+     grid-template-columns: 20% 45% 31%;
 }
 
 .left{
@@ -38,7 +38,7 @@
 }
 
 .userimage{
-     width: 25%;
+     width: 20%;
      border-radius: 50%;
 }
 
@@ -57,9 +57,9 @@
 
 .content{
      display: grid;
-     grid-template-columns: 50% 65%;
-     margin: 8% 14%;
-     row-gap: 10%;
+     grid-template-columns: 40% 70%;
+     margin: 8% 10%;
+     row-gap: 8%;
 }
 
 .valuelabel{
@@ -72,7 +72,7 @@
 .valueinput{
      font-size: larger;
      border: none;
-     font-family: 'Pacifico', cursive;
+     font-family: 'Dosis', sans-serif;
 }
 
 .logo{
@@ -103,12 +103,12 @@
 }
 
 .navigation{
-     margin-top: 30%;
+     margin-top: 50%;
 }
 
 .navbuttons{
      width: 70%;
-     padding: 20px;
+     padding: 15px;
      margin: 5% 0;
      font-weight: bold;
      font-size: large;

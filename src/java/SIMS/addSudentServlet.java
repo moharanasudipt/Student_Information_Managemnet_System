@@ -1,3 +1,4 @@
+package SIMS;
 import Dao.*;
 import java.io.*;
 import jakarta.servlet.*;
@@ -19,22 +20,13 @@ public class addSudentServlet extends HttpServlet {
             String address = request.getParameter("address");
             String dob = request.getParameter("dob");
             String gender = request.getParameter("gender");
-            String gname = request.getParameter("gname");
+            String parent = request.getParameter("parent");
             String email = request.getParameter("email");
             String branch = request.getParameter("branch");
 
             Integer age = Integer.valueOf(request.getParameter("age"));
             Long contact = Long.valueOf(request.getParameter("contact"));
 
-            System.out.println(name);
-            System.out.println(address);
-            System.out.println(age);
-            System.out.println(dob);
-            System.out.println(contact);
-            System.out.println(gender);
-            System.out.println(gname);
-            System.out.println(email);
-            System.out.println(branch);
 
             Part p = request.getPart("files");
             String fileName = p.getSubmittedFileName();
@@ -48,18 +40,19 @@ public class addSudentServlet extends HttpServlet {
 
             ServletContext context = getServletContext();
             Dao dao = (Dao) context.getAttribute("db");
+            
             String password = dao.generatePassword(name, email);
-            System.out.println(password);
-            boolean flag = dao.addStudent(name, address, age, dob, contact, gender, gname, email, branch, password, dbFileName);
+            System.out.println("Student password : "+password);
+            boolean flag = dao.addStudent(name, address, age, dob, contact, gender, parent, email, branch, password, dbFileName);
             if (flag) {
                 System.out.println("SUCCESS");
                 request.setAttribute("status", "SUCCESS");
-                RequestDispatcher rd = request.getRequestDispatcher("addStudent.html");
+                RequestDispatcher rd = request.getRequestDispatcher("addStudent.jsp");
                 rd.forward(request, response);
 
             } else {
                 request.setAttribute("status", "FAILED");
-                RequestDispatcher rd = request.getRequestDispatcher("addStudent.html");
+                RequestDispatcher rd = request.getRequestDispatcher("addStudent.jsp");
                 rd.forward(request, response);
 
             }

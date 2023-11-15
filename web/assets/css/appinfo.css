@@ -8,7 +8,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background: url(./back.jpg) no-repeat;
+     background: url(/assets/pictures/back.jpg) no-repeat;
      background-size: cover;
 }
 
@@ -40,7 +40,7 @@
 .valueinput{
      font-size: larger;
      border: none;
-     font-family: 'Pacifico', cursive;
+     font-family: 'Dosis', sans-serif;
 }
 
 .info{

@@ -1,20 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.,Model.Student,SIMS." %>
+<%@ page import="java.util.*,Model.Student,SIMS.*" %>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="user.png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="assets/pictures/user.png">
+        <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://kit.fontawesome.com/8601a8c761.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="admin_main.css">
-        <link rel="stylesheet" href="nav.css">
-        <link href="HR_btn.css" rel="stylesheet" />   
+        <link rel="stylesheet" href="assets/css/admin_main.css">
+        <link rel="stylesheet" href="assets/css/nav.css">
+        <link href="assets/css/HR_btn.css" rel="stylesheet" />   
         <title>Add Fees</title>
         <style>
             .add_student {
-                /* margin-top: ; */
-                /* background-color: yellow; */
                 width: 100%;
                 height: 100vh;
                 display: flex;
@@ -57,9 +55,7 @@
                 align-items: center;
                 justify-content: space-around;
                 flex-direction: row;
-
             }
-
             .update_fee_s {
                 width: 55%;
                 height: 85%;
@@ -130,8 +126,21 @@
                 gap: 5px;
                 font-family: Arial, Helvetica, sans-serif;
             }
-
-        </style>
+            .btn{
+                color: black;
+            }
+            .btn:hover{
+                color:white;
+            }
+            .link{
+                background: none;
+                border: none;
+                font-size: 18px;
+                padding: 10px;
+                font-family: 'Black Ops One', fangsong;
+                color:cornsilk;
+            }
+        </style>        
     </head>
     <body>
         <nav class="navbar fixed-top">
@@ -150,15 +159,15 @@
                     <li><a href="addStudent.jsp"><input type="button" value="Add Student" class="link"></a></li>
                     <li><a href="addFees.jsp"><input type="button" value="Add Fees" class="link"></a></li>
                     <li><a href="addResult.jsp"><input type="button" value="Add Result" class="link"></a></li>
-                    <li id="name"><%=session.getAttribute("AdminName")%></li>
-                    <li><a href="logout"><img src="./switch.png" alt="logout"></a></li>
+                    <li id="name"><button class="btn"><%=session.getAttribute("AdminName")%></button></li>
+                    <li><a href="logout"><button class="btn2">LOGOUT</button></a></li>
                 </ul>
             </div>
         </nav>
         <div class="container">
             <div class="add_student">
                 <div class="search">
-                    <form action="searchStudent">
+                    <form action="searchStudent" method="post">
                         <input type="text" name="searchMail" placeholder="Search Student Email">
                         <button id="se"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></button>
                     </form>
@@ -188,12 +197,12 @@
                                     Amount to Pay 
                                 </div>
                             </div>
-                            
+
                             <div class="ub_right">
                                 <div class="t_s">150000</div>
                                 <div class="t_s">${fees} </div>
                                 <div class="t_s">
-                                    <form action="updateFees">
+                                    <form action="updateFees" method="post">
                                         <input type="text" id="amount" value="" name="amount">
                                         <input type="hidden" id="amount" value="${fees}" name="fee">
                                         <input type="hidden" id="amount" value="${mail}" name="mail">

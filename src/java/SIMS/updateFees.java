@@ -1,3 +1,4 @@
+package SIMS;
 import Dao.*;
 import Model.Student;
 import java.io.*;
@@ -8,7 +9,7 @@ import java.util.List;
 public class updateFees extends HttpServlet {
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
        PrintWriter pw= response.getWriter();
@@ -16,10 +17,7 @@ public class updateFees extends HttpServlet {
        try {            
             String email= request.getParameter("mail");
             Integer CurrentFee=Integer.valueOf(request.getParameter("fee"));
-            Integer AmountFee=Integer.valueOf(request.getParameter("amount"));
-            System.out.println(email);
-            System.out.println(AmountFee);
-            System.out.println(CurrentFee);            
+            Integer AmountFee=Integer.valueOf(request.getParameter("amount"));                  
             
             ServletContext context = getServletContext();
             Dao dao = (Dao) context.getAttribute("db");
@@ -27,7 +25,9 @@ public class updateFees extends HttpServlet {
             int FEES = dao.updateFees(CurrentFee,AmountFee,email);
             System.out.println(FEES);
             if (FEES!=0) {
-                System.out.println("SUCCESS");
+                
+                List<Student> stlist = dao.getStudent(email);
+                request.setAttribute("FeeStudent", stlist);
                 request.setAttribute("StudentFees", FEES);
                 RequestDispatcher rd = request.getRequestDispatcher("addFees.jsp");
                 rd.forward(request, response);

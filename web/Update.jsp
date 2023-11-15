@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>UPDATE</title>
+        <link rel="icon" href="assets/pictures/user.png">
         <style>
             body {
 
@@ -16,7 +17,7 @@
 
             .card {
 
-                background:url(bg.jpg);
+                background:url(assets/pictures/bg.jpg);
                 background-size: cover;
 
             }
@@ -54,9 +55,9 @@
                             <h3 class="p"> Edit Student Details</h3>
                         </div>
                         <div class="card-body" id="cardBody">
-                            <form action="updateStudent" method="get" onsubmit="return validateForm()">
+                            <form action="updateStudent" method="post" onsubmit="return validateForm()">
                                 <div class="form-group">
-                                    <label for="id" class="i">Enter ID</label>
+                                    <label for="id" class="i">Student Redg No.</label>
                                     <input type="text" class="form-control " id="id" name="id" value='<%= request.getParameter("id")%>' readonly=true />
                                 </div>
                                 <div class="form-group">
@@ -97,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <script src="update.js"></script>
+       <script src="assets/js/update.js"></script>
     </body>
 
 </html>

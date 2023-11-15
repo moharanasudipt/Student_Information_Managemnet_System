@@ -6,8 +6,8 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="Result.css">
-     <link rel="icon" href="user.png">
+     <link rel="stylesheet" href="assets/css/Result.css">
+     <link rel="icon" href="assets/pictures/user.png">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <title>Result </title>
      <style>         
@@ -25,7 +25,7 @@
           <div class="page">
               <c:forEach var="viewStudentDetails" items="${allStudentProfile}">
               <h2 class="head">Report card of <div class="adjust"><%=session.getAttribute("StudentName")%></div></h2>
-              <div><a href=Student.jsp?email=<c:out value="${viewStudentDetails.email}" /> class="button"><img src="./back1.png" alt="back" class="image">&emsp14;back to home</a></div>
+              <div><a href=Student.jsp?email=<c:out value="${viewStudentDetails.email}" /> class="button"><img src="assets/pictures/back1.png" alt="back" class="image">&emsp14;back to home</a></div>
                <div class="pagecontent">
                     <div class="userimage">
                          

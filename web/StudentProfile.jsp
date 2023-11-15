@@ -1,13 +1,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.,Model.Student,SIMS." %>
+<%@ page import="java.util.*,Model.Student,SIMS.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="user.png">
-        <link rel="stylesheet" href="vprofile.css">
+        <link rel="icon" href="assets/pictures/user.png">
+        <link rel="stylesheet" href="assets/css/vprofile.css">
         <title>View Profile</title>        
     </head>
     <body>                     
@@ -72,21 +72,20 @@
                                 <input type="text" value='<c:out value="${viewStudentDetails.branch}" />' id="ubranch" name="ubranch" class="valueinput impvalue"
                                        readonly>
 
-                                <label for="uid" class="valuelabel implabel">ID:</label>
+                                <label for="uid" class="valuelabel implabel">Redg No:</label>
                                 <input type="text" value='<c:out value="${viewStudentDetails.id}" />' id="uid" name="uid" class="valueinput impvalue" readonly>
 
                                 <label for="upass" class="valuelabel implabel">Password:</label>
-                                <input type="text" value='<c:out value="${viewStudentDetails.password}" />' id="upass" name="upass" class="valueinput impvalue"
-                                       readonly>
+                                <input type="text" value='<c:out value="${viewStudentDetails.password}" />' id="upass" name="upass" class="valueinput impvalue" readonly>                                       
 
                             </div>
 
                             <div class="button">
-<a href=EditStudentProfile.jsp?id=<c:out value="${viewStudentDetails.id}" />&branch=<c:out value="${viewStudentDetails.branch}" />&email=<c:out value="${viewStudentDetails.email}" />&photo=<c:out value="${viewStudentDetails.photo}" />&password=<c:out value="${viewStudentDetails.password}" />  class="navigate"><button type="button" class="navbuttons editb">EDIT</button></a>
+<a href=EditStudentProfile.jsp?email=<c:out value="${viewStudentDetails.email}" />&photo=<c:out value="${viewStudentDetails.photo}" />&id=<c:out value="${viewStudentDetails.id}" />&branch=<c:out value="${viewStudentDetails.branch}" />&password=<c:out value="${viewStudentDetails.password}" />  class="navigate"><button type="button" class="navbuttons editb">EDIT</button></a>
                             </div>
 
                             <div class="logo">
-                                <img src="./logo.png" alt="images" class="logoimage">
+                                <img src="assets/pictures/logo.png" alt="images" class="logoimage">
                             </div>
 
                             <div class="quote">

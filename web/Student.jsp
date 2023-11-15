@@ -9,8 +9,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="icon" href="user.png">
-        <link rel="stylesheet" href="home.css">
+        <link rel="icon" href="assets/pictures/user.png">
+        <link rel="stylesheet" href="assets/css/home.css">
         <title>Student</title>
         <style>
             .userimg {
@@ -309,7 +309,7 @@
         </style>
     </head>
 
-         <body>
+    <body>
                 <%  
                     String Sname=request.getParameter("name");
                     String Sphoto=request.getParameter("image");
@@ -355,7 +355,7 @@
                     }
                 %>                
                 <div class="card">
-                    <img src="./profile.PNG" alt="profile pic" class="image">
+                    <img src="assets/pictures/profile.PNG" alt="profile pic" class="image">
                     <div class="text">
                         Click here to view your profile
                     </div>
@@ -366,7 +366,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <img src="./exam.PNG" alt="result pic" class="image">
+                    <img src="assets/pictures/exam.PNG" alt="result pic" class="image">
                     <div class="text">
                         Click here to view your result
                     </div>
@@ -377,7 +377,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <img src="./fees.PNG" alt="fees pic" class="image">
+                    <img src="assets/pictures/fees.PNG" alt="fees pic" class="image">
                     <div class="text">
                         Click here to view your fees details
                     </div>
@@ -390,7 +390,7 @@
             </div>
             <div class="container">
                 <div class="card">
-                    <img src="./collageinfo.PNG" alt="fees pic" class="image">
+                    <img src="assets/pictures/collageinfo.PNG" alt="fees pic" class="image">
                     <div class="text">
                         Click here to view the app info
                     </div>
@@ -409,5 +409,6 @@
                 Copyright &copy; SIMS 2023
             </div>
         </div>
-    </body>    
+    </body>
+
 </html>

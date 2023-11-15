@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <welcome-file-list>
+        <welcome-file>Login.html</welcome-file>
+    </welcome-file-list>
+    <filter>
+        <filter-name>LoginServletFilter</filter-name>
+        <filter-class>SIMS.LoginServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginServletFilter</filter-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>SIMS.LoginServlet</servlet-class>
         <init-param>
             <param-name>HR_ID</param-name>
             <param-value>susant@gmail.com</param-value>
@@ -15,55 +26,75 @@
     </servlet>
     <servlet>
         <servlet-name>addResult</servlet-name>
-        <servlet-class>addResult</servlet-class>
+        <servlet-class>SIMS.addResult</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addSudentServlet</servlet-name>
-        <servlet-class>addSudentServlet</servlet-class>
+        <servlet-class>SIMS.addSudentServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>showDepartment</servlet-name>
-        <servlet-class>showDepartment</servlet-class>
+        <servlet-class>SIMS.showDepartment</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>searchStudent</servlet-name>
-        <servlet-class>searchStudent</servlet-class>
+        <servlet-class>SIMS.searchStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>updateFees</servlet-name>
-        <servlet-class>updateFees</servlet-class>
+        <servlet-class>SIMS.updateFees</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>logout</servlet-class>
+        <servlet-class>SIMS.logout</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>updateStudent</servlet-name>
-        <servlet-class>updateStudent</servlet-class>
+        <servlet-class>SIMS.updateStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>deleteStudent</servlet-name>
-        <servlet-class>deleteStudent</servlet-class>
+        <servlet-class>SIMS.deleteStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>StudentDetailAdmin</servlet-name>
-        <servlet-class>StudentDetailAdmin</servlet-class>
+        <servlet-class>SIMS.StudentDetailAdmin</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>HomeServlet</servlet-class>
+        <servlet-class>SIMS.HomeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ForgetPassword</servlet-name>
-        <servlet-class>ForgetPassword</servlet-class>
+        <servlet-class>SIMS.ForgetPassword</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addAdmin</servlet-name>
-        <servlet-class>addAdmin</servlet-class>
+        <servlet-class>SIMS.addAdmin</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>deleteAdmin</servlet-name>
-        <servlet-class>deleteAdmin</servlet-class>
+        <servlet-class>SIMS.deleteAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditStudentProfile</servlet-name>
+        <servlet-class>SIMS.EditStudentProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewStudentResult</servlet-name>
+        <servlet-class>SIMS.viewStudentResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewStudentFees</servlet-name>
+        <servlet-class>SIMS.viewStudentFees</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>studentProfile</servlet-name>
+        <servlet-class>SIMS.studentProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>appInfo</servlet-name>
+        <servlet-class>SIMS.appInfo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -120,6 +151,26 @@
     <servlet-mapping>
         <servlet-name>deleteAdmin</servlet-name>
         <url-pattern>/deleteAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditStudentProfile</servlet-name>
+        <url-pattern>/EditStudentProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewStudentResult</servlet-name>
+        <url-pattern>/viewStudentResult</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewStudentFees</servlet-name>
+        <url-pattern>/viewStudentFees</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>studentProfile</servlet-name>
+        <url-pattern>/studentProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>appInfo</servlet-name>
+        <url-pattern>/appInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

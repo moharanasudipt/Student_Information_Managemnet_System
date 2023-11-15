@@ -1,3 +1,4 @@
+package SIMS;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -11,6 +12,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import jakarta.servlet.annotation.WebFilter;
+
 @WebFilter(filterName = "EditStudentProfileFilter", urlPatterns = {"/EditStudentProfile"})
 public class EditStudentProfileFilter implements Filter {
 
@@ -92,7 +94,8 @@ public class EditStudentProfileFilter implements Filter {
     public void setFilterConfig(FilterConfig filterConfig) {
         this.filterConfig = filterConfig;
     }
- @Override
+
+    @Override
     public void destroy() {
     }
 
@@ -146,7 +149,8 @@ public class EditStudentProfileFilter implements Filter {
             }
         }
     }
-public static String getStackTrace(Throwable t) {
+
+    public static String getStackTrace(Throwable t) {
         String stackTrace = null;
         try {
             StringWriter sw = new StringWriter();
@@ -163,5 +167,5 @@ public static String getStackTrace(Throwable t) {
     public void log(String msg) {
         filterConfig.getServletContext().log(msg);
     }
-    
+
 }

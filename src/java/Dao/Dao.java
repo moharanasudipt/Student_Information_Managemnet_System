@@ -29,17 +29,17 @@ public interface Dao {
     //for departments
     public List<Student> getAllDepartment(String branch);
 
-    public List<Student> getStudent(String email);
+    public List<Student> getStudent(String email);  //For STudent And Update Edit STudent details
 
-    public String resetPassword(String email, String password ,String CurrentPassword);
     //HR
-    public List<HR> HRDetails();
-    
-    public boolean AddAdmin(String name,String email,String password,String photo);
+    public boolean AddAdmin(String name, String email, String password, String photo);
 
     public boolean deleteAdmin(String email);
 
-    //STUDENT
-    public boolean updateStudentInfo(String email, String name, String address, int age, String gender, String parent, long contact, String dob , String photo);
+    public List<HR> HRDetails();
 
+    //Student 
+    public String resetPassword(String email, String password ,String CurrentPassword);
+    //student profile edit
+    public boolean updateStudentInfo(String email, String name, String address, int age, String gender, String parent, long contact, String dob , String photo);    
 }

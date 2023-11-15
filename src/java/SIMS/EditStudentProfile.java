@@ -2,9 +2,9 @@ package SIMS;
 import Dao.*;
 import Model.Student;
 import java.io.*;
-import javax.servlet.*;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.*;
 import java.util.List;
 
 @MultipartConfig
@@ -23,12 +23,9 @@ public class EditStudentProfile extends HttpServlet {
             String address = request.getParameter("uaddr");
             String gender = request.getParameter("ugender");
             String Parent = request.getParameter("uparent");                        
-            String dob = request.getParameter("udob");
-            
+            String dob = request.getParameter("udob");            
             Integer age = Integer.valueOf(request.getParameter("uage"));
-            Long contact = Long.valueOf(request.getParameter("ucontact"));
-
-            System.out.println(name);           
+            Long contact = Long.valueOf(request.getParameter("ucontact"));                    
 
             Part p = request.getPart("uimg");
             String fileName = p.getSubmittedFileName();
@@ -36,8 +33,8 @@ public class EditStudentProfile extends HttpServlet {
             String path = getServletContext().getRealPath("") + UPLOAD_DIR;
             System.out.println("File path:" + path);
             File file = new File(path);
-            p.write(path + "/" + fileName);
-            dbFileName = UPLOAD_DIR + "/" + fileName;
+            p.write(path + File.separator + fileName);
+            dbFileName = UPLOAD_DIR + File.separator + fileName;            
             System.out.println("DBFILENAME" + dbFileName);
 
             ServletContext context = getServletContext();

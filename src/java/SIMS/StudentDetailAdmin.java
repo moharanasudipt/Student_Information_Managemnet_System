@@ -1,3 +1,4 @@
+package SIMS;
 import Dao.*;
 import Model.Student;
 import java.io.*;

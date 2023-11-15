@@ -2,36 +2,73 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="user.png">
+        <link rel="icon" href="assets/pictures/user.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="assets/css/login.css">
         <title>LOGIN</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            />
     </head>
+    <style>
+        .inputBox i{
+            position: absolute;
+            right: 5%;
+            top: 20px;
+        }
+        .fa-regular, .far {
+            font-weight: 400;
+        }
+        .fa-classic, .fa-regular, .fa-solid, .far, .fas {
+            font-family: "Font Awesome 6 Free";
+        }
+        .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display,inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+        .passicon {
+            cursor: pointer;
+        }
+    </style>
     <body>
         <section>
             <div class="Leaves">
                 <div class="set">
-                    <div><img src="leaf_01.png" alt=""></div>
-                    <div><img src="leaf_02.png" alt=""></div>
-                    <div><img src="leaf_03.png" alt=""></div>
-                    <div><img src="leaf_04.png" alt=""></div>
-                    <div><img src="leaf_01.png" alt=""></div>
-                    <div><img src="leaf_02.png" alt=""></div>
-                    <div><img src="leaf_03.png" alt=""></div>
-                    <div><img src="leaf_04.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_01.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_02.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_03.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_04.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_01.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_02.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_03.png" alt=""></div>
+                    <div><img src="assets/pictures/leaf_04.png" alt=""></div>
                 </div>
             </div>
-            <img src="landscapse.jpg" alt="bg" class="bg">
-            <img src="girl.png" alt="girl" class="girl">
-            <img src="trees.png" alt="tree" class="trees">
-            <form action="LoginServlet" method="get">
+            <img src="assets/pictures/landscapse.jpg" alt="bg" class="bg">
+            <img src="assets/pictures/girl.png" alt="girl" class="girl">
+            <img src="assets/pictures/trees.png" alt="tree" class="trees">
+            <form action="LoginServlet" method="post">
                 <div class="login">
                     <h2>Welcome to SIMS</h2>
                     <div class="inputBox">
-                        <input type="email" placeholder="Email"  name="email" autocomplete="email" required>                
+                        <input type="email" placeholder="Email"  name="email" id="email" autocomplete="email" required>   
+                        <i
+                            class="fa-regular fa-envelope fa-lg emailicon"
+                            style="color: #8f2c24"
+                            ></i>
                     </div>
                     <div class="inputBox">
-                        <input type="password" placeholder="Password"  name="password" required>
+                        <input type="password" placeholder="Password"  name="password" id="password" required>
+                        <i class="fa-regular fa-eye-slash passicon" style="color: #8f2c24"></i>
                     </div>
                     <div class="inputBox">
                         <input type="submit" id="btn" value="Login"/>
@@ -42,5 +79,6 @@
                 </div>
             </form>
         </section>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.,Model.HR,SIMS." %>
+<%@ page import="java.util.*,Model.HR,SIMS.*" %>
 <% if(session.getAttribute("HRname")==null) 
 { response.sendRedirect("Login.html"); } 
 %>
@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />        
         <title>HR DASHBOARD</title>
         <!-- LOGO-->
-        <link rel="icon" href="user.png" />        
-        <link href="HR.css" rel="stylesheet" />
-        <link href="HR_btn.css" rel="stylesheet" />        
+        <link rel="icon" href="assets/pictures/user.png" />        
+        <link href="assets/css/HR.css" rel="stylesheet" />
+        <link href="assets/css/HR_btn.css" rel="stylesheet" />        
         <style>
             img{
                 height: 130px;
@@ -193,8 +193,9 @@
             </div>
         </nav>
         <!--Header-->
-        <header class="py-4 bg-image-full" style="background-image: url('bg.jpg')">
+        <header class="py-4 bg-image-full" style="background-image: url('assets/pictures/bg.jpg')">
             <div class="text-center my-5">
+               
                 <img class="img-fluid rounded-circle mb-4" src='<%=session.getAttribute("HRPhoto")%>' alt="HR" />
                 <h1 class="text-white fs-3 fw-bolder">Welcome to SIMS</h1>
                 <h3 class="text-white fs-3 fw"> Mr <%=session.getAttribute("HRname")%></h3>

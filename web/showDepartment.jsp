@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="assets/pictures/user.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <title>Departments</title>
         <style>
@@ -22,7 +23,7 @@
         </style>
     </head>
     <body>
-        <c:set var="branch1" value='${requestScope["branch"]}' />
+        <c:set var="dept" value='${requestScope["branch"]}' />
         <section class="py-5">
             <div class="container bod">
                 
@@ -35,7 +36,7 @@ STUDENT REPOSITORY
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th >ID</th>
+                                    <th >Redg No.</th>
                                     <th> Name</th>
                                     <th> Address</th>
                                     <th> Age</th>
@@ -72,14 +73,10 @@ STUDENT REPOSITORY
                                         </td>
                                         <td>
                                             <c:out value="${Student.contact}" />
-                                        </td>
-
-                                        <%--<c:set var="message" value='${requestScope["umail"]}' />--%>
-                                        <%--<c:set var="reqEmail" value="${Employee.email}" scope="request" />--%>
-
+                                        </td>                        
                                         <td>
-                                            <a href=Update.jsp?id=<c:out value='${Student.id}' />&email=<c:out value='${Student.email}' />&branch=${branch1} /><button type="button" class="btn btn-primary">EDIT</button></a>
-                                            <a href=deleteStudent?del=<c:out value="${Student.id}" />&branch=${branch1} /><button type="button" class="btn btn-danger">Delete</button></a>
+                                            <a href=Update.jsp?id=<c:out value='${Student.id}' />&email=<c:out value='${Student.email}' />&branch=${dept} /><button type="button" class="btn btn-primary">EDIT</button></a>
+                                            <a href=deleteStudent?del=<c:out value="${Student.id}" />&branch=${dept} /><button type="button" class="btn btn-danger">Delete</button></a>
                                         </td>                                                                             
                                     </tr>
                                 </c:forEach>

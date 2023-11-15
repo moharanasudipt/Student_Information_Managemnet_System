@@ -7,7 +7,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background: url(./feeback.jpg) no-repeat;
+     background: url(/assets/pictures/resultback.jpg) no-repeat;
      background-size: cover;
      width: 100vw;
      height: 100vh;
@@ -79,13 +79,6 @@ ul.itemcontains {
      display: inline;
 }
 
-.value{
-     font-family: 'Edu TAS Beginner', cursive;
-     font-size: larger;
-     margin-left: 20px;
-     display: inline;
-}
-
 .details{
      margin-top: 20px;
 }
@@ -93,4 +86,33 @@ ul.itemcontains {
      width: 40%;
      background: none;
      border: none;
+}
+
+.button{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     bottom: 20%;
+     left: 25%;
+     font-size: larger;
+     text-decoration: none;
+}
+
+.head{
+     padding: 10px;
+     border-radius: 20px;
+     background: linear-gradient(to left,white,rgb(92, 0, 134),white);
+     color: white;
+     display: flex;
+     margin-top: 10px;
+     justify-content: center;
+}
+
+.adjust{
+     margin-left: 10px;
+}
+
+.image{
+     width: 20%;
 }

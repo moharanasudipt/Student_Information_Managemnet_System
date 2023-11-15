@@ -59,8 +59,8 @@ public class LoginServletFilter implements Filter {
     }
 
     private boolean isValidPassword(String password) {      
-        String passwordPattern = "^[a-zA-Z0-9!@#$%^&()-_+=]$";
-//        "^(?=.[a-z])(?=.[A-Z])(?=.*\\d).{8,}$"  --> allows 8 digits and capital small
+        String passwordPattern = "^[a-zA-Z0-9!@#$%^&*()-_+=]*$";
+//        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"  --> allows 8 digits and capital small
         return password.matches(passwordPattern);
     }
 

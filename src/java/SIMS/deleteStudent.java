@@ -1,3 +1,4 @@
+package SIMS;
 import Dao.*;
 import Model.Student;
 import jakarta.servlet.*;
@@ -14,13 +15,13 @@ public class deleteStudent extends HttpServlet {
         try {
              String branch = request.getParameter("branch");   
              id = Integer.parseInt(request.getParameter("del"));
-             System.out.println("delete servlet  "+branch);
-             System.out.println(" id "+id);
+             
             ServletContext context = getServletContext();
             Dao d = (Dao) context.getAttribute("db");
-            boolean delete= d.deleteStudent(id);   
+            boolean delete= d.deleteStudent(id);  
+            System.out.println(delete+"deleteStudent");
               if (delete) {
-                System.out.println("SUCCESS");
+                
                 List<Student> stlist = d.getAllDepartment(branch);
                 request.setAttribute("allStudent", stlist);
                 RequestDispatcher rd = request.getRequestDispatcher("showDepartment.jsp");

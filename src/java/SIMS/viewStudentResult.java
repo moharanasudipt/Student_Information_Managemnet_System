@@ -2,8 +2,8 @@ package SIMS;
 import Dao.*;
 import Model.Student;
 import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.util.List;
 
 public class viewStudentResult extends HttpServlet {
@@ -13,13 +13,12 @@ public class viewStudentResult extends HttpServlet {
         
         try {            
             String SEmail = request.getParameter("email");           
-            System.out.println(SEmail);
             
             ServletContext context = getServletContext();
             Dao dao = (Dao) context.getAttribute("db");
           
             List<Student> SProfile = dao.getStudent(SEmail);
-            System.out.println(SProfile);
+           
             if (SProfile!=null) {
                 System.out.println("Result Show Successfully ");
                 request.setAttribute("allStudentProfile", SProfile);                

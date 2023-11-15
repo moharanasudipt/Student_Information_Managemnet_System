@@ -358,7 +358,8 @@ body {
 	height: auto;
 }
 .Std_form_main_admin{
-	/* background-color: #7c5f5f; */
+    background-color: #ffffff; 
+        
 	width: 100%;
 	/* padding: 30px; */
 	display: flex;

@@ -60,23 +60,23 @@ justify-content: center;
      font-family: 'Dosis', sans-serif;
 }
 
-.valueinput{
-     padding: 0 10px;
-     border: 2px solid white;
-     border-radius: 20px;
-     font-size: larger;
-     border: none;
-     font-family: 'Pacifico', cursive;
-}
-
 .content{
      display: grid;
      row-gap: 20px;
      grid-template-columns: 40% 55%;
 }
 
+.valueinput{
+     padding: 0 10px;
+     border-bottom: 1px dashed black;
+     border-top: 2px solid white;
+     border-right: 2px solid white;
+     border-left: 2px solid white;
+     font-size: larger;
+     font-family: 'Pacifico';
+    }
+    
 .valueinput:hover{
-     border: 2px solid white;
      background: linear-gradient(to right,darkred,blue);
      box-shadow: 0 0 4px 2px black;
      color: white;
@@ -106,14 +106,11 @@ justify-content: center;
      margin-left: 30%;
 }
 
-.action{
-     width: 200%;
-     display: flex;
-     justify-content: center;
-}
-
 .buttonsubmit{
-     width: 20%;
+     position: absolute;
+     bottom: 20%;
+     left: 45%;
+     width: 15%;     
      padding: 10px;
      background: linear-gradient(to left,green,blue);
      color: white;

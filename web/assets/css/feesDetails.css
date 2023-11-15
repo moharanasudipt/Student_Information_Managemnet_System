@@ -7,7 +7,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background: url(./resultback.jpg) no-repeat;
+     background: url(/assets/pictures/feeback.jpg) no-repeat;
      background-size: cover;
      width: 100vw;
      height: 100vh;
@@ -15,7 +15,7 @@
 
 .page {
      background-color: white;
-     height: 75%;
+     height: 80%;
      width: 55%;
      border: 5px solid goldenrod;
      border-radius: 30px;
@@ -93,4 +93,33 @@ ul.itemcontains {
      width: 40%;
      background: none;
      border: none;
+}
+
+.button{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     bottom: 15%;
+     left: 25%;
+     font-size: larger;
+     text-decoration: none;
+}
+
+.adjust{
+     margin-left: 10px;
+}
+
+.image{
+     width: 20%;
+}
+
+.head{
+     padding: 10px;
+     border-radius: 20px;
+     background: linear-gradient(to left,white,rgb(0, 87, 134),white);
+     color: white;
+     display: flex;
+     margin-top: 10px;
+     justify-content: center;
 }

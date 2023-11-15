@@ -1,4 +1,4 @@
-
+package SIMS;
 import Model.*;
 import Dao.*;
 import java.io.*;
@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String admin = "Admin";
         String student = "Student";
         String role = null;
@@ -29,14 +29,10 @@ public class LoginServlet extends HttpServlet {
 
         ServletConfig sc = getServletConfig();
         String HR_id = sc.getInitParameter("HR_ID");
-        String HR_PWD = sc.getInitParameter("HR_PWD");
-        System.out.println(HR_id);
-        System.out.println(HR_PWD);
+        String HR_PWD = sc.getInitParameter("HR_PWD");     
 
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        System.out.println(email);
-        System.out.println(password);
+        String password = request.getParameter("password");    
 
         ServletContext context = getServletContext();
         Dao dao = (Dao) context.getAttribute("db");
@@ -48,7 +44,7 @@ public class LoginServlet extends HttpServlet {
                 Admin adminDetails = adminList.get(0);
                 adName = adminDetails.getName();
                 photo = adminDetails.getPhoto();
-                System.out.println("ADMIN PHOTO----------"+photo);
+                
             }
             if (role == null) {
                 role = dao.checkS(email, password);
@@ -76,10 +72,18 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         } else if (student.equalsIgnoreCase(role)) {
             System.out.println("else if Student");
-            RequestDispatcher rd = request.getRequestDispatcher("Student.html");
+            List<Student> StudentInfo = dao.getStudent(email);
+            Student SI=StudentInfo.get(0);
+            String sName=SI.getName();            
+            String smail=SI.getEmail();            
+            String sPIC=SI.getPhoto();            
+            session.setAttribute("StudentName", sName);           
+            request.setAttribute("StudentEmail", smail);           
+            session.setAttribute("StudentPhoto", sPIC);
+            RequestDispatcher rd = request.getRequestDispatcher("Student.jsp");
             rd.forward(request, response);
         } else {
-            RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+            RequestDispatcher rd = request.getRequestDispatcher("Error.html");
             rd.forward(request, response);
         }
     }

@@ -1,14 +1,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.*,Model.HR,SIMS.*" %>
+<%@ page import="java.util.*,Model.HR,SIMS.addAdmin" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="icon" href="user.png" />        
-        <link href="HR.css" rel="stylesheet" />
-        <link href="HR_btn.css" rel="stylesheet" />        
+        <link rel="icon" href="assets/pictures/user.png" />        
+        <link href="assets/css/HR.css" rel="stylesheet" />
+        <link href="assets/css/HR_btn.css" rel="stylesheet" />        
         <title>Add Admin</title>
         <style>
             body {
@@ -16,7 +16,7 @@
                 background-color: #ffffff;
             }
             .card {
-                background:url(bg.jpg);
+                background:url(assets/pictures/bg.jpg);
                 background-size: cover;
             }
             * {
@@ -55,13 +55,13 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="HR.jsp"><button class="btn btn-warning" type="button">HOME</button></a></li>
                         <li class="nav-item"><a class="nav-link" href="#!"><button class="btn btn-outline-primary"><%=session.getAttribute("HRname")%></button></a></li>
-                        <li class="nav-item"><a class="nav-link" href="logout"><button class="btn btn-outline-danger">LOGOUT</button></a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout"><button class="btn btn2">LOGOUT</button></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!--body-->
-               <div class="container mt-4">
+        <div class="container mt-4">
             <div class="row justify-content-center">
                 <div class="col-sm-5">
                     <div class="card">
@@ -69,7 +69,9 @@
                             <h3 class="p"> Add Admin</h3>
                         </div>
                         <div class="card-body" id="cardBody">
+                            
                             <form action="addAdmin" method="post" enctype="multipart/form-data">
+                                
                                 <div class="form-group">
                                     <label for="name" class="i">Enter Name:</label>
                                     <input type="text" class="form-control " id="name" name="name" required/>
@@ -98,7 +100,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>        
         <script>
             const passwordInput = document.getElementById("password");
             const reenterPasswordInput = document.getElementById("reenterPassword");
